@@ -66,6 +66,15 @@
                             </div>
                         </div>
                     </a>
+                    <a href="note.html">
+                        <div class="relative py-2">
+                            <div class="absolute inset-y-0 translate-y-1/4 bg-yellow w-[7px] h-2/3 rounded-r-md"></div>
+                            <div class="flex px-16 py-3 text-sm font-semibold text-white">
+                                <i class="my-auto mr-3 fa fa-note-sticky"></i>
+                                <p class="my-auto">Note</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="absolute bg-yellow py-12 bottom-0 w-full">
@@ -81,7 +90,7 @@
             <div class="-z-10 absolute top-0 bg-yellow w-full h-60"></div>
 
             <div class="lg:mx-40 mx-4 z-20">
-                <!--  -->
+                <!-- Top  -->
                 <div class="sm:flex block justify-between py-16 text-green">
                     <div>
                         <h1 class="text-2xl font-semibold">Good Morning, Nugraha</h1>
@@ -104,7 +113,8 @@
                         </div>
                     </div>
                 </div>
-                <!--  -->
+
+                <!-- Kesatu -->
                 <div class="grid xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-4">
                     <div class="bg-green p-10 rounded-2xl">
                         <i class="text-white mb-6 bg-yellow p-3 rounded-lg text-xl fa fa-calendar"></i>
@@ -143,30 +153,221 @@
                         <p><span class="font-semibold text-yellow mr-4">50%</span><span class="font-normal text-sm text-gray-400">Half behind you! 😀</span></p>
                     </div>
                 </div>
-                <!--  -->
-                <div class="grid xl:grid-cols-2 grid-cols-1 mt-4 gap-4">
-                    <div class="bg-green p-10 rounded-2xl">
-                        <div class="flex flex-row">
-                            <div class="my-auto font-semibold text-white">Income <i class="cursor-pointer ml-3 p-3 border-[1px] rounded-lg text-sm border-gray-400 text-yellow fa fa-arrow-turn-down"></i></div>
-                            <div class="mx-auto my-auto">
-                                <h1 class="text-white text-2xl text-center">$ <span class="font-semibold">20 520</span></h1>
-                                <p class="text-sm"><i class="text-yellow mr-2 fa fa-up-down"></i><span class="text-yellow mr-2">21%</span><span class="text-gray-400">vs last mont</span></p>
-
+                
+                <!-- Kedua  -->
+                <div class="grid xl:grid-cols-2 grid-cols-1 mt-4 gap-4 pb-10">
+                    <div>
+                        <div class="bg-green p-10 rounded-2xl h-fit">
+                            <div class="flex flex-row">
+                                <div class="my-auto font-semibold text-white">Income <i class="cursor-pointer ml-3 p-2 border-[1px] rounded-lg text-sm border-gray-400 text-yellow fa fa-chevron-down"></i></div>
+                                <div class="mx-auto my-auto">
+                                    <h1 class="text-white text-2xl text-center">$ <span class="font-semibold">20 520</span></h1>
+                                    <p class="text-sm"><i class="text-yellow mr-2 fa fa-up-down"></i><span class="text-yellow mr-2 font-semibold">21%</span><span class="text-gray-400">vs last mont</span></p>
+    
+                                </div>
+                                <div class="my-auto font-semibold text-white">Month <i class="cursor-pointer ml-3 p-2 border-[1px] rounded-lg text-sm border-gray-400 text-yellow fa fa-chevron-down"></i></div>
                             </div>
-                            <div class="my-auto font-semibold text-white">Month <i class="cursor-pointer ml-3 p-3 border-[1px] rounded-lg text-sm border-gray-400 text-yellow fa fa-arrow-turn-down"></i></div>
+                            <div class="overflow-hidden mt-8">
+                                <canvas id="bar-chart-custom-options"></canvas>
+                            </div>
                         </div>
-                        <div class="overflow-hidden mt-8">
-                            <canvas id="bar-chart-custom-options"></canvas>
+                        <div class="bg-green p-10 rounded-2xl mt-4 h-fit">
+                            <div class="flex justify-between mb-8">
+                                <div class="flex">
+                                    <div class="my-auto font-semibold text-white">To do list </div>
+                                    <div class="h-3 w-3 bg-gray-400 mx-3 my-auto rounded-xl"></div>
+                                    <h1 class="my-auto font-semibold text-white">2</h1>
+                                </div>
+                                <div><span class="font-semibold bg-green text-yellow">New Task</span><i class="cursor-pointer ml-3 p-2 border-[1px] rounded-lg text-sm border-gray-400 text-yellow fa fa-plus"></i></div>
+                            </div>
+                            <div class="flex justify-between p-6 rounded-xl border-[1px] border-gray-400 mb-4 h-fit w-fit">
+                                <!-- <div class="my-auto mr-4"><input type="checkbox" name="chechkbox" id="chechkbox"></div> -->
+                                <div class="my-auto relative w-full">
+                                    <h1 class="text-lg text-white font-semibold">Task Completed 🎉</h1>
+                                    <p class="text-gray-400 text-sm mb-4 my-2">You have <span class="font-semibold text-yellow">5s</span> to undo the action before the task disappears from the list.<span class="text-sm text-yellow mx-1 font-medium">Undo</span></p>
+                                    <div class="absolute w-full h-1 rounded-full bg-gray-400"></div>
+                                    <div class="absolute w-[100px] z-40 h-1 bg-yellow"></div>
+                                </div>
+                                <div class=""><i class="border-[1px] border-gray-400 p-2 text-yellow rounded-lg fa-solid fa-ellipsis"></i></div>
+                            </div>
+                            <div class="flex justify-between p-6 rounded-xl border-[1px] border-gray-400 h-fit w-fit">
+                                <!-- <div class="my-auto mr-4"><input type="checkbox" name="chechkbox" id="chechkbox"></div> -->
+                                <div class="my-auto relative w-full">
+                                    <h1 class="text-md text-white font-semibold">Sign up for a COVID-19 vaccination training course for medicians. 😘</h1>
+                                </div>
+                                <div class="flex">
+                                    <div class="my-auto w-max text-sm text-gray-400 font-medium mx-4">24 April 2021</div>
+                                    <div class="my-auto"><i class="border-[1px] border-gray-400 p-2 text-yellow rounded-lg fa-solid fa-ellipsis"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="mt-12 text-yellow">Show all <i class="ml-1 text-yellow p-3 text-sm fa fa-chevron-right"></i></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-green p-10 rounded-2xl">
-                        <i class="text-white mb-6 bg-yellow p-3 rounded-lg text-xl fa fa-calendar"></i>
-                        <p class="text-white font-semibold text-sm">Today's appointments</p>
-                        <div class="flex items-end my-4">
-                            <h1 class="text-white text-4xl font-semibold mr-2">12</h1>
-                            <h1 class="text-xl font-semibold text-gray-400">/ 12</h1>
+                    <div class="bg-green px-10 rounded-2xl h-auto relative overflow-y-auto">
+                        <div class="sticky top-0 pt-10 pb-5 flex bg-green z-30 justify-between">
+                            <div class="my-auto font-semibold bg-green text-white">upcoming appointment</div>
+                            <div><span class="font-semibold bg-green text-yellow">New appointments</span><i class="cursor-pointer ml-3 p-2 border-[1px] rounded-lg text-sm border-gray-400 text-yellow fa fa-plus"></i></div>
                         </div>
-                        <p><span class="font-semibold text-yellow mr-4">50%</span><span class="font-normal text-sm text-gray-400">Half behind you! 😀</span></p>
+                        <div class="relative">
+                            <div class="flex justify-between relative text-white">
+                                <div class="flex text-sm py-3 text-gray-400 font-medium">
+                                    <div>08.00</div>
+                                    <div class="my-auto ml-6 h-3 z-20 w-3 bg-yellow rounded-full">
+                                        <div class="h-fit mx-auto -z-10 w-[1px] bg-gray-400">
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between w-max">
+                                                <div class="ml-3 flex text-sm py-4 text-gray-400 font-medium px-4">
+                                                    <div class="my-auto mr-3 h-3 w-3 bg-gray-400 rounded-full"></div>
+                                                    <div class="mx-4">08.00</div>
+                                                    <div>Benjamin Kotlinsy</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
