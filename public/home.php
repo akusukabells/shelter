@@ -62,61 +62,7 @@
 
                     <!-- Main Dashboard Tengah -->
                     <div class="bg-white lg:px-52 md:px-24 px-4 pb-4 overflow-auto h-full text-sm">
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
-                        <div>tes</div>
+                        Halilintar
                     </div>
 
                     <!-- Main Dashboard Bottom -->
