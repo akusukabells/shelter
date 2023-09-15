@@ -72,22 +72,17 @@
                             <i onclick="closePopupForm();" class="cursor-pointer absolute bg-red-600 font-semibold text-white top-0 p-4 right-0 fa fa-x"></i>
                             <h1 class="text-white text-center font-semibold my-10">Tambah Kategori Organisasi</h1>
                             <div class="px-4 pb-4">
-                                <form action="">
+                                <form action="../API/kategori_organisasi.php" method="post">
                                     <div class="flex flex-col gap-4">
                                         <div class="flex border-b-[1px] border-white py-1">
-                                            <label for="kodeprovinsi" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Kode Provinsi</label>
-                                            <input class="outline-none w-full px-4 py-3 text-sm bg-black text-white" type="text" id="kodeprovinsi" placeholder="kode provinsi">
+                                            <label for="kodeprovinsi" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Kode Kategori</label>
+                                            <input class="outline-none w-full px-4 py-3 text-sm bg-black text-white" type="text" name="kode_organisasi" placeholder="Kode Kategori">
                                         </div>
                                         <div class="flex border-b-[1px] border-white py-1">
-                                            <label for="cars" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Select</label>
-                                            <select id="cars" class="w-full bg-black text-white">
-                                                <option value="volvo">Volvo</option>
-                                                <option value="saab">Saab</option>
-                                                <option value="opel">Opel</option>
-                                                <option value="audi">Audi</option>
-                                            </select>
+                                            <label for="kodeprovinsi" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Nama Kategori</label>
+                                            <input class="outline-none w-full px-4 py-3 text-sm bg-black text-white" type="text" name="nama_organisasi" placeholder="Nama Kategori">
                                         </div>
-                                        <input class="cursor-pointer w-full px-4 py-3 text-sm text-white bg-cyan" type="submit" value="Submit">
+                                        <input class="cursor-pointer w-full px-4 py-3 text-sm text-white bg-cyan" name="submit" type="submit" value="Submit">
                                     </div>
                                 </form>
                             </div>
@@ -135,16 +130,12 @@
                                                 <td class="text-center"><?php echo $row['kode_organisasi']; ?></td>
                                                 <td class="text-center"><?php echo $row['nama_organisasi']; ?></td>
                                                 <td class="text-center">
-                                                    <div class="flex justify-center gap-4">
-                                                        <div class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2">
-                                                            <i class="w-10 flex my-auto fa fa-pen-to-square"></i>
-                                                            <span class="mr-4">Edit</span>
+                                                    <form action="../API/kategori_organisasi.php" method="post">
+                                                        <div class="flex justify-center gap-4">
+                                                            <button name="edit" type="submit" class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2" value="<?php echo $row['kode_organisasi']; ?>"><i class="w-10 flex my-auto fa fa-pen-to-square"></i>Edit</button>
+                                                            <button name="delete" type="submit" class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2" value="<?php echo $row['kode_organisasi']; ?>"><i class="w-10 flex my-auto fa fa-trash"></i>Delete</button>
                                                         </div>
-                                                        <div class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2">
-                                                            <i class="w-10 flex my-auto fa fa-trash"></i>
-                                                            <span class="mr-4">Delete</span>
-                                                        </div>
-                                                    </div>
+                                                    </form>
                                                 </td>
                                             </tr>
 

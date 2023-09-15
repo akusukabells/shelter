@@ -105,14 +105,12 @@
                                 <div class="flex my-auto">
                                     <h1 class=" text-xl font-bold">Manajemen Admin <span class="text-end text-sm font-semibold">/ Status Branch</span> </h1>
                                 </div>
-                                <div class="flex justify-center gap-4">
-                                    <div class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2">
-                                        <span class="mr-4">Open</span>
+                                <form action="../API/statusbranch.php" method="post">
+                                    <div class="flex justify-center gap-4">
+                                        <button name="open_all" type="submit" class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2">Open All</button>
+                                        <button name="close_all" type="submit" class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2">Close All</button>
                                     </div>
-                                    <div class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2">
-                                        <span class="mr-4">Close</span>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -156,14 +154,12 @@
                                                                             echo "Close";
                                                                         }  ?></td>
                                                 <td class="text-center">
-                                                    <div class="flex justify-center gap-4">
-                                                        <div class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2">
-                                                            <span class="mr-4">Open</span>
+                                                    <form action="../API/statusbranch.php" method="post">
+                                                        <div class="flex justify-center gap-4">
+                                                            <button name="open_branch" type="submit" class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2" value="<?php echo $row['kode_organisasi']; ?>">Open</button>
+                                                            <button name="close_branch" type="submit" class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2" value="<?php echo $row['kode_organisasi']; ?>">Close</button>
                                                         </div>
-                                                        <div class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2">
-                                                            <span class="mr-4">Close</span>
-                                                        </div>
-                                                    </div>
+                                                    </form>
                                                 </td>
                                             </tr>
 

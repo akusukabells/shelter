@@ -69,24 +69,43 @@
                     <div class="flex justify-center items-center h-full">
                         <div class="relative bg-black h-fit w-1/3">
                             <i onclick="closePopupForm();" class="cursor-pointer absolute bg-red-600 font-semibold text-white top-0 p-4 right-0 fa fa-x"></i>
-                            <h1 class="text-white text-center font-semibold my-10">Tambah Kategori Organisasi</h1>
+                            <h1 class="text-white text-center font-semibold my-10">Tambah Roles Organisasi</h1>
                             <div class="px-4 pb-4">
-                                <form action="">
+                                <form action="../API/roles.php" method="post">
                                     <div class="flex flex-col gap-4">
                                         <div class="flex border-b-[1px] border-white py-1">
-                                            <label for="kodeprovinsi" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Kode Provinsi</label>
-                                            <input class="outline-none w-full px-4 py-3 text-sm bg-black text-white" type="text" id="kodeprovinsi" placeholder="kode provinsi">
+                                            <label for="kodeprovinsi" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Kode Role</label>
+                                            <input class="outline-none w-full px-4 py-3 text-sm bg-black text-white" type="text" name="kode_role" placeholder="Kode Role">
                                         </div>
                                         <div class="flex border-b-[1px] border-white py-1">
-                                            <label for="cars" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Select</label>
-                                            <select id="cars" class="w-full bg-black text-white">
-                                                <option value="volvo">Volvo</option>
-                                                <option value="saab">Saab</option>
-                                                <option value="opel">Opel</option>
-                                                <option value="audi">Audi</option>
+                                            <label for="kodeprovinsi" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Nama Role</label>
+                                            <input class="outline-none w-full px-4 py-3 text-sm bg-black text-white" type="text" name="nama_role" placeholder="Nama Organisasi">
+                                        </div>
+                                        <div class="flex border-b-[1px] border-white py-1">
+                                            <label for="kodeprovinsi" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Gaji</label>
+                                            <input class="outline-none w-full px-4 py-3 text-sm bg-black text-white" type="text" name="gaji" placeholder="Gaji">
+                                        </div>
+                                        <div class="flex border-b-[1px] border-white py-1">
+                                            <label for="cars" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Organisasi</label>
+                                            <select class="w-full bg-black text-white" name="organisasi">
+                                                <?php
+                                                $organisasi = $database->getReference('Data_Organisasi')->getValue();
+                                                foreach ($organisasi as $key => $row) {
+                                                    echo "<option value=" . $row['kode_organisasi'] . ">" . $row['nama_organisasi'] . "</option>";
+                                                }
+                                                ?>
+
                                             </select>
                                         </div>
-                                        <input class="cursor-pointer w-full px-4 py-3 text-sm text-white bg-cyan" type="submit" value="Submit">
+                                        <div class="flex border-b-[1px] border-white py-1">
+                                            <label for="cars" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Level</label>
+                                            <select class="w-full bg-black text-white" name="flag">
+                                                <option value="1">Administrator</option>
+                                                <option value="2">Supervisor</option>
+                                                <option value="3">User</option>
+                                            </select>
+                                        </div>
+                                        <input class="cursor-pointer w-full px-4 py-3 text-sm text-white bg-cyan" name="submit" type="submit" value="Submit">
                                     </div>
                                 </form>
                             </div>
@@ -139,16 +158,12 @@
                                                                         echo $organisasi['nama_organisasi'];
                                                                         ?></td>
                                                 <td class="text-center">
-                                                    <div class="flex justify-center gap-4">
-                                                        <div class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2">
-                                                            <i class="w-10 flex my-auto fa fa-pen-to-square"></i>
-                                                            <span class="mr-4">Edit</span>
+                                                    <form action="../API/roles.php" method="post">
+                                                        <div class="flex justify-center gap-4">
+                                                            <button name="edit" type="submit" class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2" value="<?php echo $row['kode_role']; ?>"><i class="w-10 flex my-auto fa fa-pen-to-square"></i>Edit</button>
+                                                            <button name="delete" type="submit" class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2" value="<?php echo $row['kode_role']; ?>"><i class="w-10 flex my-auto fa fa-trash"></i>Delete</button>
                                                         </div>
-                                                        <div class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2">
-                                                            <i class="w-10 flex my-auto fa fa-trash"></i>
-                                                            <span class="mr-4">Delete</span>
-                                                        </div>
-                                                    </div>
+                                                    </form>
                                                 </td>
                                             </tr>
 

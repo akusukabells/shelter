@@ -72,29 +72,23 @@
                             <i onclick="closePopupForm();" class="cursor-pointer absolute bg-red-600 font-semibold text-white top-0 p-4 right-0 fa fa-x"></i>
                             <h1 class="text-white text-center font-semibold my-10">Tambah Provinsi</h1>
                             <div class="px-4 pb-4">
-                                <form action="">
+                                <form action="../API/provinsi.php" method="post">
                                     <div class="flex flex-col gap-4">
                                         <div class="flex border-b-[1px] border-white py-1">
                                             <label for="kodeprovinsi" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Kode Provinsi</label>
-                                            <input class="outline-none w-full px-4 py-3 text-sm bg-black text-white" type="text" id="kodeprovinsi" placeholder="kode provinsi">
+                                            <input class="outline-none w-full px-4 py-3 text-sm bg-black text-white" type="text" name="kode_provinsi" id="kodeprovinsi" placeholder="kode provinsi">
                                         </div>
                                         <div class="flex border-b-[1px] border-white py-1">
-                                            <label for="cars" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Select</label>
-                                            <select id="cars" class="w-full bg-black text-white">
-                                                <option value="volvo">Volvo</option>
-                                                <option value="saab">Saab</option>
-                                                <option value="opel">Opel</option>
-                                                <option value="audi">Audi</option>
-                                            </select>
+                                            <label for="kodeprovinsi" class="my-auto w-1/3 text-white whitespace-nowrap text-sm">Nama Provinsi</label>
+                                            <input class="outline-none w-full px-4 py-3 text-sm bg-black text-white" type="text" name="nama_provinsi" id="kodeprovinsi" placeholder="nama provinsi">
                                         </div>
-                                        <input class="cursor-pointer w-full px-4 py-3 text-sm text-white bg-cyan" type="submit" value="Submit">
+                                        <input class="cursor-pointer w-full px-4 py-3 text-sm text-white bg-cyan" name="submit" type="submit" value="Submit">
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="relative h-screen flex flex-col">
 
                     <!-- Main Dashboard Top -->
@@ -105,7 +99,7 @@
                                 <div class="flex my-auto">
                                     <h1 class=" text-xl font-bold">Wilayah <span class="text-end text-sm font-semibold">/ Provinsi</span> </h1>
                                 </div>
-                                <div onclick="openPopupForm();" class="cursor-pointer bg-black text-white px-3 py-2 text-xs font-semibold"><i class="fa fa-plus mr-3"></i><span>Add Provinsi</span></div>
+                                <div onclick="openPopupForm();" class="cursor-pointer bg-black text-white px-3 py-2 text-xs font-semibold" data-target="#myForm" data-toggle="modal" data-kode="<?php echo $row['kode_provinsi']; ?>"><i class=" fa fa-plus mr-3"></i><span>Add Provinsi</span></div>
                             </div>
                         </div>
                     </div>
@@ -136,16 +130,14 @@
                                                 <td class="text-center"><?php echo $row['kode_provinsi']; ?></td>
                                                 <td class="text-center"><?php echo $row['nama_provinsi']; ?></td>
                                                 <td class="text-center">
-                                                    <div class="flex justify-center gap-4">
-                                                        <div class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2">
-                                                            <i class="w-10 flex my-auto fa fa-pen-to-square"></i>
-                                                            <span class="mr-4">Edit</span>
-                                                        </div>
-                                                        <div class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2">
-                                                            <i class="w-10 flex my-auto fa fa-trash"></i>
-                                                            <span class="mr-4">Delete</span>
-                                                        </div>
-                                                    </div>
+                                                    <form action="../API/provinsi.php" method="post">
+                                                        <form action="../API/provinsi.php" method="post">
+                                                            <div class="flex justify-center gap-4">
+                                                                <button name="edit" type="submit" class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2" value="<?php echo $row['kode_provinsi']; ?>"><i class="w-10 flex my-auto fa fa-pen-to-square"></i>Edit</button>
+                                                                <button name="delete" type="submit" class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2" value="<?php echo $row['kode_provinsi']; ?>"><i class="w-10 flex my-auto fa fa-trash"></i>Delete</button>
+                                                            </div>
+                                                        </form>
+                                                    </form>
                                                 </td>
                                             </tr>
 
@@ -162,6 +154,8 @@
                     </div>
                 </div>
 
+
+
                 <!-- Main Dashboard Bottom -->
                 <div class="bg-black px-4 py-2">
                     <div class="text-center text-xs text-white">Admin Dashboard</div>
@@ -172,8 +166,8 @@
         </section>
 
     </section>
-
     <script src="../assets/navbar.js"></script>
+
 
 </body>
 
