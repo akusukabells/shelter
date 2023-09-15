@@ -6,7 +6,7 @@ if (empty($_SESSION['nip'])) {
 
 include("../connector/dbcon.php");
 $tanggal = $database->getReference('SystemDate')->getValue();
-$date = $tanggal['day'] . "/" . $tanggal['month'] . "/" . $tanggal['year'];
+$date = $tanggal['day'] . "-" . $tanggal['month'] . "-" . $tanggal['year'];
 ?>
 
 <section id="navbarLeftDashboard" class="border-r-2 border-white h-screen flex justify-center w-20 transform transition-[width] duration-1000 ease-in-out">
