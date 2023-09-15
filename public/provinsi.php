@@ -68,7 +68,7 @@
                 <!-- Form Popup -->
                 <div id="popupForm" class="hidden absolute backdrop-blur-sm z-50 h-full w-full">
                     <div class="flex justify-center items-center h-full">
-                        <div class="relative bg-black h-fit w-1/3">
+                        <div class="relative bg-black h-fit lg:mx-52 md:mx-24 mx-4 w-full md:w-1/3 sm:w-full">
                             <i onclick="closePopupForm();" class="cursor-pointer absolute bg-red-600 font-semibold text-white top-0 p-4 right-0 fa fa-x"></i>
                             <h1 class="text-white text-center font-semibold my-10">Tambah Provinsi</h1>
                             <div class="px-4 pb-4">
@@ -99,13 +99,13 @@
                                 <div class="flex my-auto">
                                     <h1 class=" text-xl font-bold">Wilayah <span class="text-end text-sm font-semibold">/ Provinsi</span> </h1>
                                 </div>
-                                <div onclick="openPopupForm();" class="cursor-pointer bg-black text-white px-3 py-2 text-xs font-semibold" data-target="#myForm" data-toggle="modal" data-kode="<?php echo $row['kode_provinsi']; ?>"><i class=" fa fa-plus mr-3"></i><span>Add Provinsi</span></div>
+                                <div onclick="openPopupForm();" class="cursor-pointer bg-black text-white px-3 py-2 text-xs font-semibold" data-target="#myForm" data-toggle="modal"><i class=" fa fa-plus mr-3"></i><span>Add Provinsi</span></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Main Dashboard Tengah -->
-                    <div class="lg:mx-52 md:mx-10 mx-4 pb-4 overflow-auto h-full text-sm">
+                    <div class="lg:mx-52 md:mx-24 mx-4 pb-4 overflow-auto h-full text-sm">
 
                         <!-- Table -->
                         <div>

@@ -1,3 +1,9 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+::-webkit-calendar-picker-indicator { 
+    padding: 2px;
+    background: url("icon/calendar-regular.svg") no-repeat center;
+    color: #fff;
+}
