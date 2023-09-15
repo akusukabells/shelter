@@ -62,7 +62,7 @@
 
                     <!-- Main Dashboard Tengah -->
                     <div class="bg-white lg:px-52 md:px-24 px-4 pb-4 overflow-auto h-full text-sm">
-                        <div>ata</div>
+                        <div>ata1</div>
                     </div>
 
                     <!-- Main Dashboard Bottom -->
