@@ -19,9 +19,6 @@ $date = $tanggal['day'] . "-" . $tanggal['month'] . "-" . $tanggal['year'];
                 <div class="flex justify-center items-center h-40">
                     <img draggable="false" class="h-fit w-20" src="../assets/icon/logo.png" alt="Logo.png">
                 </div>
-                <div class="mx-4 mb-4 text-center whitespace-nowrap text-xs overflow-hidden text-white">
-                    <p class="ml-2 font-semibold"><?php echo $date; ?></p>
-                </div>
             </div>
 
             <!-- Dashboard Navbar Left Mid -->
@@ -29,6 +26,10 @@ $date = $tanggal['day'] . "-" . $tanggal['month'] . "-" . $tanggal['year'];
 
                 <!-- Dashboard Navbar Left Mid Short -->
                 <div id="shortDashboard" class="flex text-xs py-4 flex-col gap-4">
+
+                    <div class="mx-4 mb-4 text-center whitespace-nowrap text-xs overflow-hidden text-white">
+                        <p class="font-semibold">Senin</p>
+                    </div>
 
                     <!-- Menu Home -->
                     <div onclick="openLongDashboard()" class="cursor-pointer hover:bg-gray flex justify-center text-white text-sm mx-4 py-3.5">
@@ -70,6 +71,10 @@ $date = $tanggal['day'] . "-" . $tanggal['month'] . "-" . $tanggal['year'];
 
                 <!-- Dashboard Navbar Left Mid Long-->
                 <div id="longDashboard" class="hidden py-4 text-xs flex-col gap-4 text-white">
+
+                    <div class="mx-4 mb-4 text-center whitespace-nowrap text-xs overflow-hidden text-white">
+                        <p class="ml-2 font-semibold"><?php echo $date; ?></p>
+                    </div>
 
                     <!-- Menu Dashboard-->
                     <div class="mx-4 cursor-pointer">
@@ -237,7 +242,7 @@ $date = $tanggal['day'] . "-" . $tanggal['month'] . "-" . $tanggal['year'];
                                 </a>
                             </div>
                             <div class="hover:bg-gray">
-                                <a href="endofday.php" class="flex justify-between px-4 py-4">
+                                <a href="endofdays.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">End Of Day</div>

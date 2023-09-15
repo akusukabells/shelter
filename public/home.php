@@ -32,7 +32,13 @@
         <?php include("navbar.php"); ?>
 
         <!-- Main Dashboard -->
-        <section class="w-full h-screen flex justify-center">
+        <section class="relative w-full h-screen flex justify-center">
+            <div class="top-4 right-4 absolute bg-red-600 ">
+                <div class="p-4 flex">
+                    <div class="my-auto mr-2"><i class="fa fa-warning"></i></div>
+                    <h1>Ini Notif apa aja</h1>
+                </div>
+            </div>
             <div class="relative w-full">
 
                 <div class="relative h-screen flex flex-col">
