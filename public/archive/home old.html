@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Dashboard</title>
+
+    <!-- NEED -->
+    <link rel="icon" href="../assets/icon/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icon/logo.png" type="image/x-icon">
+
+    <!-- TAILWINDCSS -->
+    <link href="../dist/output.css" rel="stylesheet">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .container:hover input ~ .checkmark {
+        background-color: #11101d;
+        }
+
+        .container input:checked ~ .checkmark {
+        background-color: #2E2E36;
+        }
+
+        .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        }
+
+        .container input:checked ~ .checkmark:after {
+        display: block;
+        }
+
+        .container .checkmark:after {
+        left: 9px;
+        top: 6px;
+        width: 5px;
+        height: 10px;
+        border: solid #2E2E36;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        }
+
+    </style>
+
+</head>
+<body class="font-montserrat overflow-hidden">
+
+    <!-- <section class="flex justify-between bg-black py-4 px-4 text-white">
+        <div>tes</div>
+        <div>
+            <div class="flex">
+                <img class="h-10 w-fit" src="../assets/icon/logo.png" alt="">
+                <p class="my-auto">Nugraha Alifta</p>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="flex">
+
+        <section class="relative hidden md:block bg-black min-h-screen">
+            <div>
+                <div class="py-10 w-full bg-black flex">
+                    <img class="mx-auto h-20 w-fit" src="../assets/icon/logo.png" alt="">
+                </div>
+                <div class="mb-6 mx-auto h-[1px] bg-gray-400 w-[90%]"></div>
+                <div class="flex flex-col gap-2">
+                    <a href="home.html">
+                        <div class="relative py-2 bg-white">
+                            <div class="absolute inset-y-0 translate-y-1/4 bg-black w-[7px] h-2/3 rounded-r-md"></div>
+                            <div class="flex px-16 py-3 text-sm font-semibold text-black">
+                                <i class="my-auto mr-3 fa fa-home"></i>
+                                <p class="my-auto">Home</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div class="relative py-2">
+                            <div class="absolute inset-y-0 translate-y-1/4 bg-white w-[7px] h-2/3 rounded-r-md"></div>
+                            <div class="flex px-16 py-3 text-sm font-semibold text-white">
+                                <i class="my-auto mr-3 fa fa-box"></i>
+                                <p class="my-auto">Product</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="note.html">
+                        <div class="relative py-2">
+                            <div class="absolute inset-y-0 translate-y-1/4 bg-white w-[7px] h-2/3 rounded-r-md"></div>
+                            <div class="flex px-16 py-3 text-sm font-semibold text-white">
+                                <i class="my-auto mr-3 fa fa-note-sticky"></i>
+                                <p class="my-auto">Note</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="absolute bg-white py-12 bottom-0 w-full">
+                <div class="flex">
+                    <div class="mx-auto cursor-pointer">
+                        <i class="text-black border-black border-[1px] p-3 rounded-lg text-xl fa fa-sign-out"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative overflow-y-scroll h-screen w-full">
+            <div class="-z-10 absolute top-0 bg-white w-full h-60"></div>
+
+            <div class="lg:mx-40 mx-4 z-20">
+                <!-- Top  -->
+                <div class="sm:flex block justify-between py-16 text-black">
+                    <div>
+                        <h1 class="text-2xl font-semibold">Good Morning, Nugraha</h1>
+                        <p class="mt-2 text-sm">Take a look at the latest update for your clinic<span class="mx-1 font-semibold">Physio Center !</span></p>
+                    </div>
+                    <div class="flex justify-between gap-10">
+                        <div class="flex">
+                            <i class="mr-3 my-auto fa fa-calendar-alt"></i>
+                            <p class="my-auto text-sm">Today, <span class="mx-1 font-semibold">3 2023 April</span></p>
+                        </div>
+                        <div class="flex">
+                            <i class="mr-3 my-auto fa fa-clock-four"></i>
+                            <p class="my-auto text-sm font-semibold">08.00 - 12.00</p>
+                        </div>
+                        <div class="flex relative cursor-pointer">
+                            <div class="absolute -top-1 -right-1 rounded-full h-4 w-4 bg-red-600 ring-4 ring-white ring-offset-2 ring-offset-white"></div>
+                            <div class="my-auto px-4 py-3 border-[2px] rounded-lg border-black">
+                                <i class="fa fa-bell"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kesatu -->
+                <div class="grid xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-4">
+                    <div class="bg-black p-10 rounded-2xl">
+                        <i class="text-black mb-6 bg-white p-3 rounded-lg text-xl fa fa-calendar"></i>
+                        <p class="text-white font-semibold text-sm">Today's appointments</p>
+                        <div class="flex items-end my-4">
+                            <h1 class="text-white text-4xl font-semibold mr-2">12</h1>
+                            <h1 class="text-xl font-semibold text-gray-400">/ 12</h1>
+                        </div>
+                        <p><span class="font-semibold text-white mr-4">50%</span><span class="font-normal text-sm text-gray-400">Half behind you! 😀</span></p>
+                    </div>
+                    <div class="bg-black p-10 rounded-2xl">
+                        <i class="text-black mb-6 bg-white p-3 rounded-lg text-xl fa fa-calendar"></i>
+                        <p class="text-white font-semibold text-sm">All appointments<span class="ml-2 text-gray-400">30 d.</span></p>
+                        <div class="flex items-end my-4">
+                            <h1 class="text-white text-4xl font-semibold mr-2">120</h1>
+                        </div>
+                        <p><i class="text-sm text-white mr-2 fa fa-arrow-trend-up"></i><span class="font-semibold text-white mr-4">50%</span><span class="font-normal text-sm text-gray-400">vs last month</span></p>
+                    </div>
+                    <div class="bg-black p-10 rounded-2xl">
+                        <i class="text-black mb-6 bg-white p-3 rounded-lg text-xl fa fa-calendar"></i>
+                        <p class="text-white font-semibold text-sm">Cancelled appointments<span class="ml-2 text-gray-400">30 d.</span></p>
+                        <div class="flex items-end my-4">
+                            <h1 class="text-white text-4xl font-semibold mr-2">12</h1>
+                        </div>
+                        <p><i class="text-sm text-white mr-2 fa fa-arrow-trend-up"></i><span class="font-semibold text-white mr-4">50%</span><span class="font-normal text-sm text-gray-400">vs last month</span></p>
+                    </div>
+                    <div class="bg-black p-10 rounded-2xl">
+                        <i class="text-black mb-6 bg-white p-3 rounded-lg text-xl fa fa-calendar"></i>
+                        <p class="text-white font-semibold text-sm">Fulfilled medical records</p>
+                        <div class="flex items-end my-4">
+                            <h1 class="text-white text-4xl font-semibold mr-2">4</h1>
+                            <h1 class="text-xl font-semibold text-gray-400">/ 45</h1>
+                        </div>
+                        <p><span class="font-semibold text-white mr-4">10%</span><span class="font-normal text-sm text-gray-400">Could be better!</span></p>
+                    </div>
+                </div>
+                
+                <!-- Kedua  -->
+                <div class="grid xl:grid-cols-2 grid-cols-1 mt-4 gap-4 pb-10">
+                    <div>
+                        <div class="bg-black p-10 rounded-2xl h-fit">
+                            <div class="flex flex-row">
+                                <div class="my-auto font-semibold text-white">Income <i class="cursor-pointer ml-3 p-2 border-[1px] rounded-lg text-sm border-gray-400 text-white fa fa-chevron-down"></i></div>
+                                <div class="mx-auto my-auto">
+                                    <h1 class="text-white text-2xl text-center">$ <span class="font-semibold">20 520</span></h1>
+                                    <p class="text-sm"><i class="text-white mr-2 fa fa-up-down"></i><span class="text-white mr-2 font-semibold">21%</span><span class="text-gray-400">vs last mont</span></p>
+    
+                                </div>
+                                <div class="my-auto font-semibold text-white">Month <i class="cursor-pointer ml-3 p-2 border-[1px] rounded-lg text-sm border-gray-400 text-white fa fa-chevron-down"></i></div>
+                            </div>
+                            <div class="overflow-hidden mt-8">
+                                <canvas id="bar-chart-custom-options"></canvas>
+                            </div>
+                        </div>
+                        <div class="bg-black p-10 rounded-2xl mt-4 h-fit">
+                            <div class="flex justify-between mb-8">
+                                <div class="flex">
+                                    <div class="my-auto font-semibold text-white">To do list </div>
+                                    <div class="h-3 w-3 bg-gray-400 mx-3 my-auto rounded-xl"></div>
+                                    <h1 class="my-auto font-semibold text-white">2</h1>
+                                </div>
+                                <div><span class="font-semibold bg-black text-white">New Task</span><i class="cursor-pointer ml-3 p-2 border-[1px] rounded-lg text-sm border-gray-400 text-white fa fa-plus"></i></div>
+                            </div>
+                            <!--  -->
+                            <div class="flex justify-between p-6 rounded-xl border-[1px] border-gray-400 mb-4 h-fit">
+                                <div>
+                                    <label class="select-none container block relative cursor-pointer text-xl pl-8">
+                                        <input class="absolute opacity-0 left-0 top-0 cursor-pointer" type="checkbox" checked="checked">
+                                        <span class="h-6 w-6 checkmark absolute top-0 left-0 bg-gray-400 rounded-md"></span>
+                                    </label>
+                                </div>
+                                <div class="my-auto relative w-full mx-4">
+                                    <h1 class="text-md text-white font-semibold">Task Completed 🎉</h1>
+                                    <p class="text-gray-400 text-sm mb-4 my-2">You have <span class="font-semibold text-white">5s</span> to undo the action before the task disappears from the list.<span class="text-sm text-white mx-1 font-medium cursor-pointer">Undo</span></p>
+                                    <div class="absolute w-full h-1 rounded-full bg-gray-400"></div>
+                                    <div class="absolute w-[100px] z-40 h-1 bg-white"></div>
+                                </div>
+                                <div class="cursor-pointer h-fit"><i class="border-[1px] border-gray-400 p-2 text-white rounded-lg fa-solid fa-ellipsis"></i></div>
+                            </div>
+                            <!--  -->
+                            <div class="flex justify-between p-6 rounded-xl border-[1px] border-gray-400 h-fit w-fit">
+                                <div class="my-auto relative w-full">
+                                    <h1 class="text-md text-white font-semibold">Sign up for a COVID-19 vaccination training course for medicians. 😘</h1>
+                                </div>
+                                <div class="flex">
+                                    <div class="my-auto w-max text-sm text-gray-400 font-medium mx-4">24 April 2021</div>
+                                    <div class="cursor-pointer my-auto"><i class="border-[1px] border-gray-400 p-2 text-white rounded-lg fa-solid fa-ellipsis"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="mt-12 text-white cursor-pointer">Show all <i class="text-white p-3 text-sm fa fa-chevron-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-black px-10 rounded-2xl min-h-full max-h-[700px] relative overflow-y-auto">
+                        <div class="sticky top-0 pt-10 pb-5 flex bg-black z-30 justify-between">
+                            <div class="my-auto font-semibold bg-black text-white">Upcoming appointment</div>
+                            <div><span class="font-semibold bg-black text-white">New appointments</span><i class="cursor-pointer ml-3 p-2 border-[1px] rounded-lg text-sm border-gray-400 text-white fa fa-plus"></i></div>
+                        </div>
+                        
+                        <!-- Timeline Bar -->
+                        <div class="my-8 text-sm">
+
+                            <!-- Timeline -->
+                            <div class="relative">
+
+                                <!-- Kiri -->
+                                <div class="flex">
+                                    <div class="my-auto mr-7 text-white font-semibold w-[47px]">08:00</div>
+                                    <div class="my-auto rounded-full bg-white h-3 w-3 ring-white ring-1 ring-offset-1 ring-offset-white"></div>
+                                </div>
+    
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Kanan Full Active -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="absolute my-auto translate-y-6 -left-6"><i class="text-white text-sm fa fa-play"></i></div>
+                                        <div class="flex border-l-2 border-gray-400 py-2">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available] text-gray-400 border-[1px] border-gray-400 rounded-xl">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-white h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-white">08:00</div>
+                                                        <div class="my-auto ml-4 text-white">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex">
+                                                    <div class="mr-4 my-auto text-sm text-white">On Going</div>
+                                                    <div class="cursor-pointer my-auto"><i class="font-bold border-[1px] text-[10px] border-gray-400 p-2 text-white rounded-lg fa-solid fa-chevron-up"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Timeline -->
+                            <div class="relative">
+
+                                <!-- Kiri -->
+                                <div class="flex">
+                                    <div class="my-auto mr-7 text-white font-semibold w-[47px]">09:00</div>
+                                    <div class="my-auto rounded-full bg-white h-3 w-3 ring-white ring-1 ring-offset-1 ring-offset-white"></div>
+                                </div>
+    
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Timeline -->
+                            <div class="relative">
+
+                                <!-- Kiri -->
+                                <div class="flex">
+                                    <div class="my-auto mr-7 text-white font-semibold w-[47px]">10:00</div>
+                                    <div class="my-auto rounded-full bg-white h-3 w-3 ring-white ring-1 ring-offset-1 ring-offset-white"></div>
+                                </div>
+    
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Timeline -->
+                            <div class="relative">
+
+                                <!-- Kiri -->
+                                <div class="flex">
+                                    <div class="my-auto mr-7 text-white font-semibold w-[47px]">11:00</div>
+                                    <div class="my-auto rounded-full bg-white h-3 w-3 ring-white ring-1 ring-offset-1 ring-offset-white"></div>
+                                </div>
+    
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Timeline -->
+                            <div class="relative">
+
+                                <!-- Kiri -->
+                                <div class="flex">
+                                    <div class="my-auto mr-7 text-white font-semibold w-[47px]">12:00</div>
+                                    <div class="my-auto rounded-full bg-white h-3 w-3 ring-white ring-1 ring-offset-1 ring-offset-white"></div>
+                                </div>
+    
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Kanan -->
+                                <div class="ml-20 w-[-webkit-fill-available] font-semibold">
+                                    <div class="relative">
+                                        <div class="flex border-l-2 border-gray-400">
+                                            <div class="flex ml-4 px-4 justify-between h-14 w-[-webkit-fill-available]">
+                                                <div class="flex">
+                                                    <div class="my-auto rounded-full bg-gray-400 h-3 w-3"></div>
+                                                    <div class="flex sm:flex-row flex-col">
+                                                        <div class="my-auto ml-4 text-gray-400">08:00</div>
+                                                        <div class="my-auto ml-4 text-gray-400">Benjamin Kotlinsy</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-black p-4 mt-4 text-white text-sm text-center">
+                Copyright by <a class="font-semibold" href="http://github.com/nugraha05">Nugraha05</a>
+            </div>
+
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+        <script>
+            const dataBarCustomOptions = {
+            type: "bar",
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June"],
+                datasets: [
+                {
+                    label: "Traffic",
+                    data: [30, 15, 62, 65, 61, 6],
+                    backgroundColor: [
+                    "#f9bc60",
+                    ],
+
+                },
+                ],
+            },
+            };
+
+            const optionsBarCustomOptions = {
+            options: {
+                plugins: {
+                legend: {
+                    position: "bottom",
+                    labels: {
+                    color: "rgb(156 163 175)",
+                    },
+                },
+                },
+                scales: {
+                x: {
+                    ticks: {
+                    color: "rgb(156 163 175)",
+                    },
+                },
+                y: {
+                    ticks: {
+                    color: "rgb(156 163 175)",
+                    },
+                },
+                },
+            },
+            };
+
+            new te.Chart(
+            document.getElementById("bar-chart-custom-options"),
+            dataBarCustomOptions,
+            optionsBarCustomOptions
+            );
+        </script>
+    </section>
+</body>
+</html>

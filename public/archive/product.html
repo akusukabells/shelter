@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - Dashboard</title>
+
+    <!-- NEED -->
+    <link rel="icon" href="../assets/icon/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icon/logo.png" type="image/x-icon">
+
+    <!-- TAILWINDCSS -->
+    <link href="../dist/output.css" rel="stylesheet">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+</head>
+<body class="font-montserrat overflow-hidden">
+
+    <!-- <section class="flex justify-between bg-black py-4 px-4 text-white">
+        <div>tes</div>
+        <div>
+            <div class="flex">
+                <img class="h-10 w-fit" src="../assets/icon/logo.png" alt="">
+                <p class="my-auto">Nugraha Alifta</p>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="flex">
+
+        <section class="relative hidden md:block bg-black min-h-screen">
+            <div>
+                <div class="py-10 w-full bg-black flex">
+                    <img class="mx-auto h-20 w-fit" src="../assets/icon/logo.png" alt="">
+                </div>
+                <div class="mb-6 mx-auto h-[1px] bg-gray-400 w-[90%]"></div>
+                <div class="flex flex-col gap-2">
+                    <a href="home.html">
+                        <div class="relative py-2">
+                            <div class="absolute inset-y-0 translate-y-1/4 bg-yellow w-[7px] h-2/3 rounded-r-md"></div>
+                            <div class="flex px-16 py-3 text-sm font-semibold text-white">
+                                <i class="my-auto mr-3 fa fa-home"></i>
+                                <p class="my-auto">Home</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div class="relative py-2 bg-white">
+                            <div class="absolute inset-y-0 translate-y-1/4 bg-yellow w-[7px] h-2/3 rounded-r-md"></div>
+                            <div class="flex px-16 py-3 text-sm font-semibold text-black">
+                                <i class="my-auto mr-3 fa fa-box"></i>
+                                <p class="my-auto">Product</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="note.html">
+                        <div class="relative py-2">
+                            <div class="absolute inset-y-0 translate-y-1/4 bg-yellow w-[7px] h-2/3 rounded-r-md"></div>
+                            <div class="flex px-16 py-3 text-sm font-semibold text-white">
+                                <i class="my-auto mr-3 fa fa-note-sticky"></i>
+                                <p class="my-auto">Note</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="absolute bg-yellow py-12 bottom-0 w-full">
+                <div class="flex">
+                    <div class="mx-auto cursor-pointer">
+                        <i class="text-black border-black border-[1px] p-3 rounded-lg text-xl fa fa-sign-out"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative overflow-y-scroll h-screen w-full">
+            <div class="-z-10 absolute top-0 bg-yellow w-full h-60"></div>
+
+            <div class="lg:mx-40 mx-4 z-20 h-full overflow-hidden">
+                <!-- Top  -->
+                <div class="sm:flex block justify-between py-16 text-black">
+                    <div>
+                        <h1 class="text-2xl font-semibold">Good Morning, Nugraha</h1>
+                        <p class="mt-2 text-sm">Take a look at the latest update for your clinic<span class="mx-1 font-semibold">Physio Center !</span></p>
+                    </div>
+                    <div class="flex justify-between gap-10">
+                        <div class="flex">
+                            <i class="mr-3 my-auto fa fa-calendar-alt"></i>
+                            <p class="my-auto text-sm">Today, <span class="mx-1 font-semibold">3 2023 April</span></p>
+                        </div>
+                        <div class="flex">
+                            <i class="mr-3 my-auto fa fa-clock-four"></i>
+                            <p class="my-auto text-sm font-semibold">08.00 - 12.00</p>
+                        </div>
+                        <div class="flex relative cursor-pointer">
+                            <div class="absolute -top-1 -right-1 rounded-full h-4 w-4 bg-red-600 ring-4 ring-yellow ring-offset-2 ring-offset-yellow"></div>
+                            <div class="my-auto px-4 py-3 border-[2px] rounded-lg border-black">
+                                <i class="fa fa-bell"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kesatu -->
+                <div class="flex justify-between gap-10 bg-black px-10 py-8 rounded-2xl">
+                    <div class="w-full">
+                        <form action="" method="post">
+                            <div class="flex">
+                                <div class="my-auto"><i class="py-4 pl-4 bg-white text-black text-sm fa fa-magnifying-glass"></i></div>
+                                <input autocomplete="off" id="email" name="email" type="search" class="h-auto text-sm peer placeholder-transparent w-full bg-white px-4 focus:outline-none border-none placeholder:text-black text-black" placeholder="Search User"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="text-center bg-yellow">
+                        <form action="" method="post">
+                            <div class="cursor-pointer px-10 py-3 w-max font-semibold text-black text-sm"><i class="mr-4 fa fa-plus"></i>Add User</div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Ketiga -->
+                <div class="flex justify-between gap-10 py-10 bg-black px-10 rounded-2xl mt-4 max-h-full overflow-y-auto">
+                    <div class="h-max overflow-x-auto w-full mb-[300px]">
+                        <table class="table-fixed">
+                            <thead>
+                                <tr class="text-gray-400 text-left h-4 text-sm">
+                                    <th class="pr-10 whitespace-nowrap text-center font-semibold"></th>
+                                    <th	class="px-10 whitespace-nowrap text-center font-semibold">Basic Info</th>
+                                    <th class="px-10 whitespace-nowrap font-semibold">Employe Code</th>
+                                    <th class="px-10 whitespace-nowrap font-semibold">Designation</th>
+                                    <th class="px-10 whitespace-nowrap font-semibold">Phone Number</th>
+                                    <th class="px-10 whitespace-nowrap font-semibold">Joining Date</th>
+                                    <th class="px-10 whitespace-nowrap font-semibold">Joining Date</th>
+                                    <th class="px-10 whitespace-nowrap font-semibold">Joining Date</th>
+                                    <th class="px-10 whitespace-nowrap font-semibold"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">1</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">2</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">3</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">4</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">5</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">6</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">7</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">8</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">9</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">10</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">11</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">12</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">13</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                                <tr class="h-20">
+                                    <td class="font-bold text-yellow">14</td>
+                                    <td class="text-white font-semibold">
+                                        <div class="flex">
+                                            <div class="my-auto h-10 w-10 bg-white rounded-full mr-4"><img class="h-fit w-10" src="/assets/icon/logo.png" alt=""></div>
+                                            <div>
+                                                <div class="text-[16px] font-bold">Nugi Darmawan</div>
+                                                <div class="text-[14px] font-normal">nugidarmawan@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-white font-semibold text-center">CU009</td>
+                                    <td class="text-white font-semibold text-center">Angular Developer</td>
+                                    <td class="text-white font-semibold text-center">+62 813-2029-2038</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold text-center">Mar 27, 2016</td>
+                                    <td class="text-white font-semibold">:</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="block bg-black p-4 mt-4 text-white text-sm text-center">
+                Copyright by <a class="font-semibold" href="http://github.com/nugraha05">Nugraha05</a>
+            </div>
+
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+        <script>
+            const dataBarCustomOptions = {
+            type: "bar",
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June"],
+                datasets: [
+                {
+                    label: "Traffic",
+                    data: [30, 15, 62, 65, 61, 6],
+                    backgroundColor: [
+                    "#f9bc60",
+                    ],
+
+                },
+                ],
+            },
+            };
+
+            const optionsBarCustomOptions = {
+            options: {
+                plugins: {
+                legend: {
+                    position: "bottom",
+                    labels: {
+                    color: "rgb(156 163 175)",
+                    },
+                },
+                },
+                scales: {
+                x: {
+                    ticks: {
+                    color: "rgb(156 163 175)",
+                    },
+                },
+                y: {
+                    ticks: {
+                    color: "rgb(156 163 175)",
+                    },
+                },
+                },
+            },
+            };
+
+            new te.Chart(
+            document.getElementById("bar-chart-custom-options"),
+            dataBarCustomOptions,
+            optionsBarCustomOptions
+            );
+        </script>
+    </section>
+</body>
+</html>
