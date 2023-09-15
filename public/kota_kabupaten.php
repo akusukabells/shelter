@@ -1,10 +1,10 @@
-public/provinsi.php<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Provinsi - Dashboard</title>
+    <title>Kota/Kabupaten - Dashboard</title>
 
     <!-- NEED -->
     <link rel="icon" href="../assets/icon/logo.png" type="image/x-icon">
@@ -58,7 +58,7 @@ public/provinsi.php<!DOCTYPE html>
 
         <!-- Navbar Left Dashboard -->
         <?php include("navbar.php");
-
+        $reference = $database->getReference('Kota')->getValue();
         ?>
 
         <!-- Main Dashboard -->
@@ -70,7 +70,7 @@ public/provinsi.php<!DOCTYPE html>
                     <div class="flex justify-center items-center h-full">
                         <div class="relative bg-black h-fit w-1/3">
                             <i onclick="closePopupForm();" class="cursor-pointer absolute bg-red-600 font-semibold text-white top-0 p-4 right-0 fa fa-x"></i>
-                            <h1 class="text-white text-center font-semibold my-10">Tambah Provinsi</h1>
+                            <h1 class="text-white text-center font-semibold my-10">Tambah Kota</h1>
                             <div class="px-4 pb-4">
                                 <form action="">
                                     <div class="flex flex-col gap-4">
@@ -103,7 +103,7 @@ public/provinsi.php<!DOCTYPE html>
                         <div class="flex w-full">
                             <div class="flex justify-between w-full">
                                 <div class="flex my-auto">
-                                    <h1 class=" text-xl font-bold">Wilayah <span class="text-end text-sm font-semibold">/ Provinsi</span> </h1>
+                                    <h1 class=" text-xl font-bold">Wilayah <span class="text-end text-sm font-semibold">/ Kota/Kabupaten</span> </h1>
                                 </div>
                                 <div onclick="openPopupForm();" class="cursor-pointer bg-black text-white px-3 py-2 text-xs font-semibold"><i class="fa fa-plus mr-3"></i><span>Add Provinsi</span></div>
                             </div>
@@ -120,6 +120,7 @@ public/provinsi.php<!DOCTYPE html>
                                     <tr>
                                         <th class="w-10">No</th>
                                         <th>Kode</th>
+                                        <th>Nama Kota/ Kabupaten</th>
                                         <th>Provinsi</th>
                                         <th class="w-1/12">Action</th>
                                     </tr>
@@ -127,14 +128,15 @@ public/provinsi.php<!DOCTYPE html>
                                 <tbody style="height: 50px;">
 
                                     <?php
-                                    $reference = $database->getReference('Provinsi')->getValue();
                                     if ($reference > 0) {
                                         $i = 1;
                                         foreach ($reference as $key => $row) { ?>
                                             <tr style="height: 75px">
                                                 <td class="text-center"><?php echo $i; ?></td>
-                                                <td class="text-center"><?php echo $row['kode_provinsi']; ?></td>
-                                                <td class="text-center"><?php echo $row['nama_provinsi']; ?></td>
+                                                <td class="text-center"><?php echo $row['kode_kota']; ?></td>
+                                                <td class="text-center"><?php echo $row['nama_kota']; ?></td>
+                                                <?php $provisi = $database->getReference('Provinsi/' . $row['kode_provinsi'])->getValue(); ?>
+                                                <td class="text-center"><?php echo $provisi['nama_provinsi']; ?></td>
                                                 <td class="text-center">
                                                     <div class="flex justify-center gap-4">
                                                         <div class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2">

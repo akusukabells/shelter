@@ -1,10 +1,10 @@
-public/provinsi.php<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Provinsi - Dashboard</title>
+    <title>Status Branch - Dashboard</title>
 
     <!-- NEED -->
     <link rel="icon" href="../assets/icon/logo.png" type="image/x-icon">
@@ -103,9 +103,16 @@ public/provinsi.php<!DOCTYPE html>
                         <div class="flex w-full">
                             <div class="flex justify-between w-full">
                                 <div class="flex my-auto">
-                                    <h1 class=" text-xl font-bold">Wilayah <span class="text-end text-sm font-semibold">/ Provinsi</span> </h1>
+                                    <h1 class=" text-xl font-bold">Manajemen Admin <span class="text-end text-sm font-semibold">/ Status Branch</span> </h1>
                                 </div>
-                                <div onclick="openPopupForm();" class="cursor-pointer bg-black text-white px-3 py-2 text-xs font-semibold"><i class="fa fa-plus mr-3"></i><span>Add Provinsi</span></div>
+                                <div class="flex justify-center gap-4">
+                                    <div class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2">
+                                        <span class="mr-4">Open</span>
+                                    </div>
+                                    <div class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2">
+                                        <span class="mr-4">Close</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -119,31 +126,42 @@ public/provinsi.php<!DOCTYPE html>
                                 <thead style="height: 50px; background-color: #11101d; color: white;">
                                     <tr>
                                         <th class="w-10">No</th>
-                                        <th>Kode</th>
-                                        <th>Provinsi</th>
+                                        <th>Nama Organisasi</th>
+                                        <th>Induk Organisasi</th>
+                                        <th>Status</th>
                                         <th class="w-1/12">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody style="height: 50px;">
 
                                     <?php
-                                    $reference = $database->getReference('Provinsi')->getValue();
+                                    $reference = $database->getReference('Data_Organisasi')->getValue();
                                     if ($reference > 0) {
                                         $i = 1;
                                         foreach ($reference as $key => $row) { ?>
                                             <tr style="height: 75px">
                                                 <td class="text-center"><?php echo $i; ?></td>
-                                                <td class="text-center"><?php echo $row['kode_provinsi']; ?></td>
-                                                <td class="text-center"><?php echo $row['nama_provinsi']; ?></td>
+                                                <td class="text-center"><?php echo $row['nama_organisasi']; ?></td>
+
+                                                <td class="text-center"><?php if (empty($row['induk_organisasi'])) {
+                                                                            echo "";
+                                                                        } else {
+                                                                            $induk = $database->getReference('Data_Organisasi/' . $row['induk_organisasi'])->getValue();
+                                                                            echo $induk['nama_organisasi'];
+                                                                        }
+                                                                        ?></td>
+                                                <td class="text-center"><?php if ($row['status'] == "1") {
+                                                                            echo "Open";
+                                                                        } else if ($row['status'] == "0") {
+                                                                            echo "Close";
+                                                                        }  ?></td>
                                                 <td class="text-center">
                                                     <div class="flex justify-center gap-4">
                                                         <div class="cursor-pointer flex h-fit bg-green-600 text-white px-2 py-2">
-                                                            <i class="w-10 flex my-auto fa fa-pen-to-square"></i>
-                                                            <span class="mr-4">Edit</span>
+                                                            <span class="mr-4">Open</span>
                                                         </div>
                                                         <div class="cursor-pointer flex h-fit bg-red-600 text-white px-2 py-2">
-                                                            <i class="w-10 flex my-auto fa fa-trash"></i>
-                                                            <span class="mr-4">Delete</span>
+                                                            <span class="mr-4">Close</span>
                                                         </div>
                                                     </div>
                                                 </td>

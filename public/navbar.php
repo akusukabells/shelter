@@ -3,6 +3,10 @@ session_start();
 if (empty($_SESSION['nip'])) {
     header("location: ../index.php");
 }
+
+include("../connector/dbcon.php");
+$tanggal = $database->getReference('SystemDate')->getValue();
+$date = $tanggal['day'] . "/" . $tanggal['month'] . "/" . $tanggal['year'];
 ?>
 
 <section id="navbarLeftDashboard" class="border-r-2 border-white h-screen flex justify-center w-20 transform transition-[width] duration-1000 ease-in-out">
@@ -16,7 +20,7 @@ if (empty($_SESSION['nip'])) {
                     <img draggable="false" class="h-fit w-20" src="../assets/icon/logo.png" alt="Logo.png">
                 </div>
                 <div class="mx-4 mb-4 text-center whitespace-nowrap text-xs overflow-hidden text-white">
-                    <p class="ml-2 font-semibold">3 2023 April</p>
+                    <p class="ml-2 font-semibold"><?php echo $date; ?></p>
                 </div>
             </div>
 
@@ -56,11 +60,6 @@ if (empty($_SESSION['nip'])) {
                         </div>
                     </div>
 
-                    <!-- Menu Manajemen Karyawan -->
-                    <div onclick="openLongDashboard()" class="cursor-pointer hover:bg-gray flex justify-center text-white text-sm mx-4 py-3.5">
-                        <div class="relative my-auto"><i class="text-xs text-white fa-solid fa-gear"></i>
-                        </div>
-                    </div>
 
                     <!-- Menu Arsip -->
                     <div onclick="openLongDashboard()" class="cursor-pointer hover:bg-gray flex justify-center text-white text-sm mx-4 py-3.5">
@@ -105,7 +104,7 @@ if (empty($_SESSION['nip'])) {
                                 </a>
                             </div>
                             <div class="hover:bg-gray">
-                                <a href="wilayah/kota_kabupaten.php" class="flex justify-between px-4 py-4">
+                                <a href="kota_kabupaten.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">Kota / Kabupaten</div>
@@ -128,7 +127,7 @@ if (empty($_SESSION['nip'])) {
                         <!-- SubMenu Organisasi -->
                         <div id="subMenuOrganisasi" class="h-0 overflow-hidden">
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="kategori_organisasi.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">Kategori Organisasi</div>
@@ -136,7 +135,7 @@ if (empty($_SESSION['nip'])) {
                                 </a>
                             </div>
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="data_organisasi.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">Data Organisasi</div>
@@ -151,7 +150,7 @@ if (empty($_SESSION['nip'])) {
                         <div id="menuKaryawan" class="hover:bg-gray flex justify-between px-4 py-4">
                             <div class="flex">
                                 <div><i class="w-8 fa-solid fa-id-badge"></i></div>
-                                <div class="line-clamp-1">Karyawan</div>
+                                <div class="line-clamp-1">Manajemen Karyawan</div>
                             </div>
                             <div class="my-auto"><i id="arrowKaryawan" class="rotate-0 fa-solid fa-caret-down"></i></div>
                         </div>
@@ -159,7 +158,7 @@ if (empty($_SESSION['nip'])) {
                         <!-- SubMenu Karyawan -->
                         <div id="subMenuKaryawan" class="h-0 overflow-hidden">
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="karyawan.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">Karyawan</div>
@@ -167,7 +166,15 @@ if (empty($_SESSION['nip'])) {
                                 </a>
                             </div>
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="resetpassword.php" class="flex justify-between px-4 py-4">
+                                    <div class="flex">
+                                        <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
+                                        <div class="line-clamp-1">Reset Password</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="hover:bg-gray">
+                                <a href="roles.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">Role</div>
@@ -175,7 +182,7 @@ if (empty($_SESSION['nip'])) {
                                 </a>
                             </div>
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="menu.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">Menu</div>
@@ -183,7 +190,7 @@ if (empty($_SESSION['nip'])) {
                                 </a>
                             </div>
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="hakaksesmenu.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">Hak Akses Menu</div>
@@ -206,7 +213,7 @@ if (empty($_SESSION['nip'])) {
                         <!-- SubMenu Manajemen Admin -->
                         <div id="subMenuManajemenAdmin" class="h-0 overflow-hidden">
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="holidays.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">Holidays</div>
@@ -214,7 +221,7 @@ if (empty($_SESSION['nip'])) {
                                 </a>
                             </div>
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="qrcode.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">QR Code</div>
@@ -222,7 +229,7 @@ if (empty($_SESSION['nip'])) {
                                 </a>
                             </div>
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="statusbranch.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">Status Branch</div>
@@ -230,7 +237,7 @@ if (empty($_SESSION['nip'])) {
                                 </a>
                             </div>
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="endofday.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">End Of Day</div>
@@ -240,36 +247,7 @@ if (empty($_SESSION['nip'])) {
                         </div>
                     </div>
 
-                    <!-- Menu Manajemen Karyawan -->
-                    <div class="mx-4 cursor-pointer">
-                        <div id="menuManajemenKaryawan" class="hover:bg-gray flex justify-between px-4 py-4">
-                            <div class="flex">
-                                <div><i class="w-8 fa-solid fa-gear"></i></div>
-                                <div class="line-clamp-1">Manajemen Karyawan</div>
-                            </div>
-                            <div class="my-auto"><i id="arrowManajemenKaryawan" class="rotate-0 fa-solid fa-caret-down"></i></div>
-                        </div>
 
-                        <!-- SubMenu Manajemen Karyawan -->
-                        <div id="subMenuManajemenKaryawan" class="h-0 overflow-hidden">
-                            <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
-                                    <div class="flex">
-                                        <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
-                                        <div class="line-clamp-1">Reset Password</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
-                                    <div class="flex">
-                                        <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
-                                        <div class="line-clamp-1">Pendaftaran Karyawan</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Menu Arsip -->
                     <div class="mx-4 cursor-pointer">
