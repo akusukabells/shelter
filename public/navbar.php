@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION['nip'])) {
-    header("location:../index.php");
+    header("location: ../index.php");
 }
 ?>
 
@@ -14,6 +14,9 @@ if (empty($_SESSION['nip'])) {
             <div class="bg-black">
                 <div class="flex justify-center items-center h-40">
                     <img draggable="false" class="h-fit w-20" src="../assets/icon/logo.png" alt="Logo.png">
+                </div>
+                <div class="mx-4 mb-4 text-center whitespace-nowrap text-xs overflow-hidden text-white">
+                    <p class="ml-2 font-semibold">3 2023 April</p>
                 </div>
             </div>
 
@@ -71,12 +74,14 @@ if (empty($_SESSION['nip'])) {
 
                     <!-- Menu Dashboard-->
                     <div class="mx-4 cursor-pointer">
-                        <div id="menuHome" class="hover:bg-gray flex justify-between px-4 py-4">
-                            <div class="flex">
-                                <div><i class="w-8 fa-solid fa-house"></i></div>
-                                <div class="line-clamp-1">Home</div>
+                        <a href="home.php">
+                            <div id="menuHome" class="hover:bg-gray flex justify-between px-4 py-4">
+                                <div class="flex">
+                                    <div><i class="w-8 fa-solid fa-house"></i></div>
+                                    <div class="line-clamp-1">Home</div>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <!-- Menu Wilayah-->
@@ -92,7 +97,7 @@ if (empty($_SESSION['nip'])) {
                         <!-- SubMenu Wilayah -->
                         <div id="subMenuWilayah" class="h-0 overflow-hidden">
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="provinsi.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">Provinsi</div>
@@ -100,7 +105,7 @@ if (empty($_SESSION['nip'])) {
                                 </a>
                             </div>
                             <div class="hover:bg-gray">
-                                <a href="" class="flex justify-between px-4 py-4">
+                                <a href="wilayah/kota_kabupaten.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">Kota / Kabupaten</div>

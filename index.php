@@ -43,14 +43,14 @@ if (!empty($_SESSION['nip'])) {
                         <div class="flex items-center justify-center h-full text-sm text-white">
                             <div>
                                 <div class="text-center font-bold text-2xl mb-6">LOG IN</div>
-                                <div class="flex justify-center">
+                                <div class="flex justify-center w-full">
 
                                     <!-- Form Login-->
                                     <form action="API/auth.php" method="POST">
                                         <div class="flex flex-col justify-center gap-6">
                                             <input class="placeholder:text-white placeholder:border-white text-xs w-80 outline-none bg-black border-[1px] text-white rounded-sm px-4 py-3" type="text" name="nip" placeholder="NIP" required>
                                             <input class="placeholder:text-white text-xs w-80 outline-none bg-black border-[1px] text-white rounded-sm px-4 py-3" type="password" name="password" placeholder="Password" required>
-                                            <button class="cursor-pointer bg-cyan text-white text-xs rounded-sm py-3 font-semibold w-80" type="submit">LOGIN</button>
+                                            <button class="cursor-pointer bg-white text-white text-xs rounded-sm py-3 font-semibold w-80" type="submit">LOGIN</button>
                                         </div>
                                     </form>
 

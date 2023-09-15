@@ -35,34 +35,79 @@
         <section class="w-full h-screen flex justify-center">
             <div class="relative w-full">
 
-                <div class="h-screen flex flex-col">
+                <div class="relative h-screen flex flex-col">
 
                     <!-- Main Dashboard Top -->
-                    <div class="px-4 py-10 flex flex-row">
-                        <div id="bar" class="my-auto w-fit mr-4"><i class="fa-solid fa-bars"></i></div>
-                        <div class="flex lg:px-40 md:px-24 px-4 w-full">
+                    <div id="bar" class="absolute my-auto w-fit left-0 cursor-pointer"><i class="fa-solid fa-bars"></i></div>
+                    <div class="relative lg:mx-52 md:mx-24 mx-4 my-10 flex flex-row">
+                        <div class="flex w-full">
                             <div class="flex justify-between w-full">
                                 <div>
-                                    <h1 class="text-xl font-semibold">Good Morning, Nugraha</h1>
-                                    <p class="text-sm">Take a look at the latest update for your clinic <span class="font-semibold">Physio Center !</span></p>
-                                </div>
-                                <div class="flex gap-10 my-auto">
-                                    <div class="flex text-sm">
-                                        <div class="mr-4"><i class="fa-solid fa-calendar-alt"></i></div>
-                                        <p>Today, <span class="ml-2 font-semibold">3 2023 April</span></p>
-                                    </div>
-                                    <div class="flex text-sm">
-                                        <div class="mr-4"><i class="fa-solid fa-calendar-alt"></i></div>
-                                        <p class="font-semibold">08.00 - 12.00</p>
-                                    </div>
+                                    <h1 class="text-xl font-bold">Home</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Main Dashboard Tengah -->
-                    <div class="bg-white lg:px-52 md:px-24 px-4 pb-4 overflow-auto h-full text-sm">
-                        <div>ata1</div>
+                    <div class="bg-white lg:mx-52 md:mx-24 mx-4 pb-4 overflow-auto h-full text-sm">
+                        <div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                            <div>tes</div>
+                        </div>
                     </div>
 
                     <!-- Main Dashboard Bottom -->

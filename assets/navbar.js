@@ -40,6 +40,20 @@ function openLongDashboard() {
 }
 
 
+// Popup Form
+function openPopupForm() {
+    var popupForm = document.getElementById("popupForm");
+
+    popupForm.classList.remove("hidden");
+}
+
+function closePopupForm() {
+    var popupForm = document.getElementById("popupForm");
+
+    popupForm.classList.add("hidden");
+}
+
+
 // Menu Long Dashboard
 document.getElementById("menuWilayah").addEventListener("click", () => {
     var subMenu = document.getElementById("subMenuWilayah")
