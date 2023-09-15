@@ -237,7 +237,7 @@ $date = $tanggal['day'] . "-" . $tanggal['month'] . "-" . $tanggal['year'];
                                 </a>
                             </div>
                             <div class="hover:bg-gray">
-                                <a href="endofday.php" class="flex justify-between px-4 py-4">
+                                <a href="endofdays.php" class="flex justify-between px-4 py-4">
                                     <div class="flex">
                                         <div><i class="ml-1 w-7 text-[5px] fa-solid fa-circle"></i></div>
                                         <div class="line-clamp-1">End Of Day</div>

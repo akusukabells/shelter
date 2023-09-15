@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Dashboard</title>
+    <title>Reset Password - Dashboard</title>
 
     <!-- NEED -->
     <link rel="icon" href="../assets/icon/logo.png" type="image/x-icon">
@@ -43,7 +43,7 @@
                         <div class="flex w-full">
                             <div class="flex justify-between w-full">
                                 <div class="flex my-auto">
-                                    <h1 class=" text-xl font-bold">Edit <span class="text-end text-sm font-semibold">/ Provinsi</span> </h1>
+                                    <h1 class=" text-xl font-bold">Manajemen Karyawan <span class="text-end text-sm font-semibold">/ Reset Password</span> </h1>
                                 </div>
                             </div>
                         </div>
@@ -52,25 +52,13 @@
                     <!-- Main Dashboard Tengah -->
                     <div class="lg:mx-52 md:mx-24 mx-4 mb-4  overflow-auto h-full text-sm">
                         <div class="">
-                            <form action="">
+                            <form action="../API/reset_password.php" method="post">
                                 <div class="flex py-4 border-b-[1px] border-black">
                                     <label for="NIP" class="text-sm w-1/2">NIP</label>
-                                    <input class="outline-none text-sm text-black w-full" type="text" name="" id="NIP" placeholder="Masukan NIP">
-                                </div>
-                                <div class="flex py-4 border-b-[1px] border-black">
-                                    <label for="NIP" class="text-sm w-1/2">NIP</label>
-                                    <input class="outline-none text-sm text-black w-full" type="text" name="" id="NIP" placeholder="Masukan NIP">
-                                </div>
-                                <div class="flex py-4 border-b-[1px] border-black">
-                                    <label for="NIP" class="text-sm w-1/2">NIP</label>
-                                    <input class="outline-none text-sm text-black w-full" type="text" name="" id="NIP" placeholder="Masukan NIP">
-                                </div>
-                                <div class="flex py-4 border-b-[1px] border-black">
-                                    <label for="NIP" class="text-sm w-1/2">NIP</label>
-                                    <input class="outline-none text-sm text-black w-full" type="text" name="" id="NIP" placeholder="Masukan NIP">
+                                    <input class="outline-none text-sm text-black w-full" type="text" name="nip" id="NIP" placeholder="Masukan NIP">
                                 </div>
                                 <div class="flex justify-end">
-                                    <input class="outline-none bg-black text-white w-fit px-4 py-2 mt-4 text-sm" type="submit" value="Submit">
+                                    <input class="outline-none bg-black text-white w-fit px-4 py-2 mt-4 text-sm" name="submit" type="submit" value="Submit">
                                 </div>
                             </form>
                         </div>
