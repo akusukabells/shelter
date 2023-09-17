@@ -1,9 +1,9 @@
 // Bar Open And Close Navbar Left
 document.getElementById("bar").addEventListener("click", () => {
-    var navbarLeftDashboard = document.getElementById("navbarLeftDashboard")
-    var infoAccount = document.getElementById("infoAccount")
-    var shortDashboard = document.getElementById("shortDashboard")
-    var longDashboard = document.getElementById("longDashboard")
+    const navbarLeftDashboard = document.getElementById("navbarLeftDashboard")
+    const infoAccount = document.getElementById("infoAccount")
+    const shortDashboard = document.getElementById("shortDashboard")
+    const longDashboard = document.getElementById("longDashboard")
 
     longDashboard.classList.toggle("flex")
     longDashboard.classList.toggle("hidden")
@@ -15,16 +15,16 @@ document.getElementById("bar").addEventListener("click", () => {
     infoAccount.classList.toggle("hidden")
 
     navbarLeftDashboard.classList.toggle("w-20");
-    navbarLeftDashboard.classList.toggle("w-[20rem]");
+    navbarLeftDashboard.classList.toggle("w-96");
 });
 
 
 // Navbar Left Short Dashboard
 function openLongDashboard() {
-    var navbarLeftDashboard = document.getElementById("navbarLeftDashboard")
-    var infoAccount = document.getElementById("infoAccount")
-    var shortDashboard = document.getElementById("shortDashboard")
-    var longDashboard = document.getElementById("longDashboard")
+    const navbarLeftDashboard = document.getElementById("navbarLeftDashboard")
+    const infoAccount = document.getElementById("infoAccount")
+    const shortDashboard = document.getElementById("shortDashboard")
+    const longDashboard = document.getElementById("longDashboard")
 
     longDashboard.classList.toggle("flex")
     longDashboard.classList.toggle("hidden")
@@ -36,86 +36,86 @@ function openLongDashboard() {
     shortDashboard.classList.toggle("hidden")
 
     navbarLeftDashboard.classList.toggle("w-20");
-    navbarLeftDashboard.classList.toggle("w-[20rem]");
-}
+    navbarLeftDashboard.classList.toggle("w-96");
+};
 
 
 // Popup Form
 function openPopupForm() {
-    var popupForm = document.getElementById("popupForm");
+    const popupForm = document.getElementById("popupForm");
 
     popupForm.classList.remove("hidden");
-}
+};
 
 function closePopupForm() {
-    var popupForm = document.getElementById("popupForm");
+    const popupForm = document.getElementById("popupForm");
 
     popupForm.classList.add("hidden");
-}
+};
 
 
 // Menu Long Dashboard
 document.getElementById("menuWilayah").addEventListener("click", () => {
-    var subMenu = document.getElementById("subMenuWilayah")
-    var arrow = document.getElementById("arrowWilayah");
+    const subMenu = document.getElementById("subMenuWilayah");
+    const arrow = document.getElementById("arrowWilayah");
 
-    arrow.classList.toggle("rotate-0")
-    arrow.classList.toggle("rotate-180")
-
+    arrow.classList.toggle("fa-caret-down");
+    arrow.classList.toggle("fa-caret-up");
+    
     subMenu.classList.toggle("h-0");
     subMenu.classList.toggle("h-fit");
 });
 
 document.getElementById("menuOrganisasi").addEventListener("click", () => {
-    var subMenu = document.getElementById("subMenuOrganisasi")
-    var arrow = document.getElementById("arrowOrganisasi")
+    const subMenu = document.getElementById("subMenuOrganisasi");
+    const arrow = document.getElementById("arrowOrganisasi");
 
-    arrow.classList.toggle("rotate-0")
-    arrow.classList.toggle("rotate-180")
+    arrow.classList.toggle("fa-caret-down");
+    arrow.classList.toggle("fa-caret-up");
 
     subMenu.classList.toggle("h-0");
     subMenu.classList.toggle("h-fit");
 });
 
 document.getElementById("menuKaryawan").addEventListener("click", () => {
-    var subMenu = document.getElementById("subMenuKaryawan")
-    var arrow = document.getElementById("arrowKaryawan")
+    const subMenu = document.getElementById("subMenuKaryawan");
+    const arrow = document.getElementById("arrowKaryawan");
 
-    arrow.classList.toggle("rotate-0")
-    arrow.classList.toggle("rotate-180")
+    arrow.classList.toggle("fa-caret-down");
+    arrow.classList.toggle("fa-caret-up");
 
     subMenu.classList.toggle("h-0");
     subMenu.classList.toggle("h-fit");
 });
 
 document.getElementById("menuManajemenAdmin").addEventListener("click", () => {
-    var subMenu = document.getElementById("subMenuManajemenAdmin")
-    var arrow = document.getElementById("arrowManajemenAdmin")
+    const subMenu = document.getElementById("subMenuManajemenAdmin");
+    const arrow = document.getElementById("arrowManajemenAdmin");
 
-    arrow.classList.toggle("rotate-0")
-    arrow.classList.toggle("rotate-180")
+    arrow.classList.toggle("fa-caret-down");
+    arrow.classList.toggle("fa-caret-up");
 
     subMenu.classList.toggle("h-0");
     subMenu.classList.toggle("h-fit");
 });
 
 document.getElementById("menuManajemenKaryawan").addEventListener("click", () => {
-    var subMenu = document.getElementById("subMenuManajemenKaryawan")
-    var arrow = document.getElementById("arrowManajemenKaryawan")
+    const subMenu = document.getElementById("subMenuManajemenKaryawan");
+    const arrow = document.getElementById("arrowManajemenKaryawan");
 
-    arrow.classList.toggle("rotate-0")
-    arrow.classList.toggle("rotate-180")
+    arrow.classList.toggle("fa-caret-down");
+    arrow.classList.toggle("fa-caret-up");
 
     subMenu.classList.toggle("h-0");
     subMenu.classList.toggle("h-fit");
 });
 
 document.getElementById("menuArsip").addEventListener("click", () => {
-    var subMenu = document.getElementById("subMenuArsip")
-    var arrow = document.getElementById("arrowArsip")
+    const subMenu = document.getElementById("subMenuArsip");
+    const arrow = document.getElementById("arrowArsip");
 
-    arrow.classList.toggle("rotate-0")
-    arrow.classList.toggle("rotate-180")
+    arrow.classList.toggle("fa-caret-down");
+    arrow.classList.toggle("fa-caret-up");
 
     subMenu.classList.toggle("h-0");
     subMenu.classList.toggle("h-fit");

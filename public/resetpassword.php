@@ -20,8 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- ICONS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="../assets/fontawesome6/css/all.css">
 </head>
 
 <body class="font-montserrat overflow-hidden">
@@ -29,7 +28,9 @@
     <section class="flex">
 
         <!-- Navbar Left Dashboard -->
-        <?php include("navbar.php"); ?>
+        <section id="navbarLeftDashboard" class="border-r-2 border-white h-screen flex justify-center w-20 transform transition-[width] duration-1000 ease-in-out">
+            <?php include("navbar.php"); ?>
+        </section>
 
         <!-- Main Dashboard -->
         <section class="w-full h-screen flex justify-center">
@@ -53,13 +54,66 @@
                     <div class="lg:mx-52 md:mx-24 mx-4 mb-4  overflow-auto h-full text-sm">
                         <div class="">
                             <form action="../API/reset_password.php" method="post">
+
+                                <!-- Text -->
                                 <div class="flex py-4 border-b-[1px] border-black">
                                     <label for="NIP" class="text-sm w-1/2">NIP</label>
                                     <input class="outline-none text-sm text-black w-full" type="text" name="nip" id="NIP" placeholder="Masukan NIP">
                                 </div>
+
+                                <!-- Konten Checkbox -->
+                                <div id="openKontenCheckbox" class="py-4 border-b-[1px] border-black">
+                                    <div class="flex justify-between">
+                                        <div>Dashboard</div>
+                                        <div id="symbolKontentCheckbox" class="fa fa-plus"></div>
+                                    </div>
+
+                                    <!-- Open Konten Checkbox -->
+                                    <div id="kontentCheckbox" class="h-0 transform overflow-hidden transition-[height] duration-1000 ease-in-out text-xs">
+                                        <div class="py-3 flex flex-col">
+                                            <div class="flex">
+                                                <input class="mr-3 my-auto" type="checkbox" name="ApprovedCuti" id="ApprovedCuti">
+                                                <label for="ApprovedCuti">Approved Cuti</label>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 flex flex-col">
+                                            <div class="flex">
+                                                <input class="mr-3 my-auto" type="checkbox" name="ApprovedCuti" id="ApprovedCuti">
+                                                <label for="ApprovedCuti">Approved Cuti</label>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 flex flex-col">
+                                            <div class="flex">
+                                                <input class="mr-3 my-auto" type="checkbox" name="ApprovedCuti" id="ApprovedCuti">
+                                                <label for="ApprovedCuti">Approved Cuti</label>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 flex flex-col">
+                                            <div class="flex">
+                                                <input class="mr-3 my-auto" type="checkbox" name="ApprovedCuti" id="ApprovedCuti">
+                                                <label for="ApprovedCuti">Approved Cuti</label>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 flex flex-col">
+                                            <div class="flex">
+                                                <input class="mr-3 my-auto" type="checkbox" name="ApprovedCuti" id="ApprovedCuti">
+                                                <label for="ApprovedCuti">Approved Cuti</label>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 flex flex-col">
+                                            <div class="flex">
+                                                <input class="mr-3 my-auto" type="checkbox" name="ApprovedCuti" id="ApprovedCuti">
+                                                <label for="ApprovedCuti">Approved Cuti</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Submit -->
                                 <div class="flex justify-end">
                                     <input class="outline-none bg-black text-white w-fit px-4 py-2 mt-4 text-sm" name="submit" type="submit" value="Submit">
                                 </div>
+                                
                             </form>
                         </div>
                     </div>
@@ -76,6 +130,23 @@
     </section>
 
     <script src="../assets/navbar.js"></script>
+
+    <script>
+        // Konten Checkbox
+        document.getElementById("openKontenCheckbox").addEventListener("click", () => {
+            const kontentCheckbox = document.getElementById("kontentCheckbox");
+            const symbolKontentCheckbox = document.getElementById("symbolKontentCheckbox");
+
+            kontentCheckbox.classList.toggle("mt-3");
+
+            if (document.querySelectorAll("#kontentCheckbox")[0].className == "h-0 transform overflow-hidden transition-[height] duration-1000 ease-in-out" || "transform overflow-hidden transition-[height] duration-1000 ease-in-out h-0") {
+                symbolKontentCheckbox.classList.toggle("fa-remove");
+            };
+
+            kontentCheckbox.classList.toggle("h-0");
+            kontentCheckbox.classList.toggle("h-fit");
+        });
+    </script>
 
 </body>
 

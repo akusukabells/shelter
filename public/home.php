@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- ICONS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/fontawesome6/css/all.css">
 
 </head>
 
@@ -29,18 +29,22 @@
     <section class="flex">
 
         <!-- Navbar Left Dashboard -->
-        <?php include("navbar.php"); ?>
+        <section id="navbarLeftDashboard" class="border-r-2 border-white h-screen flex justify-center w-20 transform transition-[width] duration-1000 ease-in-out">
+            <?php include("navbar.php"); ?>
+        </section>
 
         <!-- Main Dashboard -->
         <section class="relative w-full h-screen flex justify-center">
+
+            <!--  -->
             <div class="top-4 right-4 absolute bg-red-600 ">
-                <div class="p-4 flex">
-                    <div class="my-auto mr-2"><i class="fa fa-warning"></i></div>
-                    <h1>Ini Notif apa aja</h1>
+                <div class="px-6 py-4 flex text-white">
+                    <div class="my-auto mr-4 text-sm"><i class="fa fa-warning"></i></div>
+                    <h1 class="my-auto text-sm">Ini Notif apa aja</h1>
                 </div>
             </div>
+            
             <div class="relative w-full">
-
                 <div class="relative h-screen flex flex-col">
 
                     <!-- Main Dashboard Top -->
@@ -57,7 +61,7 @@
 
                     <!-- Main Dashboard Tengah -->
                     <div class="bg-white lg:mx-52 md:mx-24 mx-4 pb-4 overflow-auto h-full text-sm">
-                        <div>
+                        <div class="flex justify-center items-center h-full">
                             <center><canvas id="canvas" width="400" height="400">
                                 </canvas></center>
                         </div>
@@ -67,14 +71,15 @@
                     <div class="bg-black px-4 py-2">
                         <div class="text-center text-xs text-white">Admin Dashboard</div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </section>
 
     </section>
 
     <script src="../assets/navbar.js"></script>
+    
     <script>
         const canvas = document.getElementById("canvas");
         const ctx = canvas.getContext("2d");
@@ -153,6 +158,7 @@
             ctx.rotate(-pos);
         }
     </script>
+
 </body>
 
 </html>
