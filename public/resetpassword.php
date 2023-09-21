@@ -62,8 +62,8 @@
                                 </div>
 
                                 <!-- Konten Checkbox -->
-                                <div id="openKontenCheckbox" class="py-4 border-b-[1px] border-black">
-                                    <div class="flex justify-between">
+                                <div class="py-2 border-b-[1px] border-black">
+                                    <div id="openKontenCheckbox" class="py-2 flex justify-between">
                                         <div>Dashboard</div>
                                         <div id="symbolKontentCheckbox" class="fa fa-plus"></div>
                                     </div>
