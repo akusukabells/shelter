@@ -176,7 +176,7 @@
                                             <tr style="height: 75px">
                                                 <td class="text-center"><?php echo $i; ?></td>
                                                 <?php $kategori = $database->getReference('Kategori_Organisasi/' . $row['kategori_organisasi'])->getValue(); ?>
-                                                <td class="text-center"><?php echo $kategori['kode_organisasi']; ?></td>
+                                                <td class="text-center"><?php echo $row['kode_organisasi']; ?></td>
                                                 <td class="text-center"><?php echo $kategori['nama_organisasi']; ?></td>
                                                 <td class="text-center"><?php echo $row['nama_organisasi']; ?></td>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password - Dashboard</title>
+    <title>Kategori Organisasi - Dashboard</title>
 
     <!-- NEED -->
     <link rel="icon" href="../assets/icon/logo.png" type="image/x-icon">
@@ -21,6 +21,35 @@
 
     <!-- ICONS -->
     <link rel="stylesheet" href="../assets/fontawesome6/css/all.css">
+
+    <style>
+        .listbarang {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .listbarang td,
+        .listbarang th {
+            border: 0.5px solid #ddd;
+            padding: 8px;
+        }
+
+        .listbarang tr:hover {
+            background-color: #ddd;
+        }
+
+        .listbarang th {
+            font-size: 12px;
+            background-color: #16161a;
+        }
+
+        select {
+            padding: 12px;
+            /* background-color: red !important; */
+            outline: none !important;
+            font-size: 12px;
+        }
+    </style>
 </head>
 
 <body class="font-montserrat overflow-hidden">
@@ -34,20 +63,9 @@
 
         <!-- Main Dashboard -->
         <section class="w-full h-screen flex justify-center">
-            <?php
-            if (isset($_SESSION['status'])) {
-            ?>
-                <div class="top-4 right-4 absolute bg-red-600 ">
-                    <div class="px-6 py-4 flex text-white">
-                        <div class="my-auto mr-4 text-sm"><i class="fa fa-warning"></i></div>
-                        <h1 class="my-auto text-sm"><?php echo $_SESSION['status']; ?></h1>
-                    </div>
-                </div>
-            <?php
-                unset($_SESSION['status']);
-            }
-            ?>
+
             <div class="relative w-full">
+
 
                 <div class="relative h-screen flex flex-col">
 
@@ -57,7 +75,7 @@
                         <div class="flex w-full">
                             <div class="flex justify-between w-full">
                                 <div class="flex my-auto">
-                                    <h1 class=" text-xl font-bold">Manajemen Karyawan <span class="text-end text-sm font-semibold">/ Reset Password</span> </h1>
+                                    <h1 class=" text-xl font-bold">Edit <span class="text-end text-sm font-semibold">/ Kategori Organisasi</span> </h1>
                                 </div>
                             </div>
                         </div>
@@ -66,51 +84,44 @@
                     <!-- Main Dashboard Tengah -->
                     <div class="lg:mx-52 md:mx-24 mx-4 mb-4  overflow-auto h-full text-sm">
                         <div class="">
-                            <form action="../API/reset_password.php" method="post">
-
+                            <form action="../API/kategori_organisasi.php" method="post">
+                                <?php
+                                $id = $_SESSION['edit'];
+                                $getData = $database->getReference('Kategori_Organisasi/' . $id)->getValue();
+                                ?>
                                 <!-- Text -->
                                 <div class="flex py-4 border-b-[1px] border-black">
-                                    <label for="NIP" class="text-sm w-1/2">NIP</label>
-                                    <input class="outline-none text-sm text-black w-full" type="text" name="nip" id="NIP" placeholder="Masukan NIP">
+                                    <label class="text-sm w-1/2">Kode Kateogri</label>
+                                    <input class="outline-none text-sm text-black w-full" value="<?php echo $getData['kode_organisasi']; ?>" type="text" name="kode_provinsi" placeholder="Kode Organisasi" disabled>
+                                </div>
+                                <div class="flex py-4 border-b-[1px] border-black">
+                                    <label class="text-sm w-1/2">Nama Kategori</label>
+                                    <input class="outline-none text-sm text-black w-full" value="<?php echo $getData['nama_organisasi']; ?>" type="text" name="nama_organisasi" placeholder="Nama Kategori">
                                 </div>
                                 <!-- Submit -->
                                 <div class="flex justify-end">
-                                    <input class="outline-none bg-black text-white w-fit px-4 py-2 mt-4 text-sm" name="submit" type="submit" value="Submit">
+                                    <input class="outline-none bg-black text-white w-fit px-4 py-2 mt-4 text-sm" name="submit_edit" type="submit" value="Submit">
                                 </div>
 
                             </form>
                         </div>
                     </div>
-
-                    <!-- Main Dashboard Bottom -->
-                    <div class="bg-black px-4 py-2">
-                        <div class="text-center text-xs text-white">Admin Dashboard</div>
-                    </div>
                 </div>
+
+
+
+                <!-- Main Dashboard Bottom -->
+                <div class="bg-black px-4 py-2">
+                    <div class="text-center text-xs text-white">Admin Dashboard</div>
+                </div>
+            </div>
 
             </div>
         </section>
 
     </section>
-
     <script src="../assets/navbar.js"></script>
 
-    <script>
-        // Konten Checkbox
-        document.getElementById("openKontenCheckbox").addEventListener("click", () => {
-            const kontentCheckbox = document.getElementById("kontentCheckbox");
-            const symbolKontentCheckbox = document.getElementById("symbolKontentCheckbox");
-
-            kontentCheckbox.classList.toggle("mt-3");
-
-            if (document.querySelectorAll("#kontentCheckbox")[0].className == "h-0 transform overflow-hidden transition-[height] duration-1000 ease-in-out" || "transform overflow-hidden transition-[height] duration-1000 ease-in-out h-0") {
-                symbolKontentCheckbox.classList.toggle("fa-remove");
-            };
-
-            kontentCheckbox.classList.toggle("h-0");
-            kontentCheckbox.classList.toggle("h-fit");
-        });
-    </script>
 
 </body>
 

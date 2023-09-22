@@ -44,6 +44,7 @@ if (isset($_POST['delete'])) {
     }
 }
 if (isset($_POST['edit'])) {
-    $edit_id = $_POST['edit'];
-    echo $edit_id;
+    $_SESSION['edit'] = $_POST['edit'];
+    header("location: ../edit/data_organisasi.php");
 }
+

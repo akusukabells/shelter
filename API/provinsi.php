@@ -38,6 +38,29 @@ if (isset($_POST['delete'])) {
     }
 }
 if (isset($_POST['edit'])) {
-    $edit_id = $_POST['edit'];
-    echo $edit_id;
+    $_SESSION['edit'] = $_POST['edit'];
+    header("location: ../edit/provinsi.php");
+}
+
+
+if (isset($_POST['submit_edit'])) {
+    $kode_provinsi = $_SESSION['edit'];
+    $nama_provinsi = $_POST['nama_provinsi'];
+
+    $postData = [
+        'kode_provinsi' => $kode_provinsi,
+        'nama_provinsi' => $nama_provinsi
+    ];
+
+
+    $postRef_result = $database->getReference("Provinsi/" . $kode_provinsi)->set($postData);
+    if ($postRef_result) {
+        $_SESSION['status'] = "Successfully Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/provinsi.php");
+    } else {
+        $_SESSION['status'] = "Failed Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/provinsi.php");
+    }
 }

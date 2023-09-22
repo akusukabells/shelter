@@ -42,6 +42,30 @@ if (isset($_POST['delete'])) {
 }
 
 if (isset($_POST['edit'])) {
-    $edit_id = $_POST['edit'];
-    echo $edit_id;
+    $_SESSION['edit'] = $_POST['edit'];
+    header("location: ../edit/kota_kabupaten.php");
+}
+
+if (isset($_POST['submit_edit'])) {
+    $kode_kota = $_SESSION['edit'];
+    $nama_kota = $_POST['nama_kota'];
+    $kode_provinsi = $_POST['kode_provinsi'];
+
+    $postData = [
+        'kode_kota' => $kode_kota,
+        'nama_kota' => $nama_kota,
+        'kode_provinsi' => $kode_provinsi
+    ];
+
+
+    $postRef_result = $database->getReference("Kota/" . $kode_kota)->set($postData);
+    if ($postRef_result) {
+        $_SESSION['status'] = "Successfully Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/kota_kabupaten.php");
+    } else {
+        $_SESSION['status'] = "Failed Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/kota_kabupaten.php");
+    }
 }
