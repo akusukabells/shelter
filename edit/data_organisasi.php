@@ -99,7 +99,7 @@
                                     <input class="outline-none text-sm text-black w-full" value="<?php echo $getData['nama_organisasi']; ?>" type="text" name="nama_organisasi" placeholder="Nama Organisasi">
                                 </div>
                                 <div class="flex py-4 border-b-[1px] border-black">
-                                    <label for="cars" class="text-sm w-1/2">Provinsi</label>
+                                    <label for="cars" class="text-sm w-1/2">Kategori Organisasi</label>
                                     <select id="cars" class="w-full " name="kategori_organisasi">
                                         <?php $kategori = $database->getReference('Kategori_Organisasi')->getValue();
                                         foreach ($kategori as $key => $row) {
@@ -113,7 +113,7 @@
                                     </select>
                                 </div>
                                 <div class="flex py-4 border-b-[1px] border-black">
-                                    <label for="cars" class="text-sm w-1/2">Provinsi</label>
+                                    <label for="cars" class="text-sm w-1/2">Induk Organisasi</label>
                                     <select id="cars" class="w-full " name="induk_organisasi">
                                         <?php $data_organisasi = $database->getReference('Data_Organisasi')->getValue();
                                         echo "<option value=''>-</option>";
@@ -133,7 +133,7 @@
                                     </select>
                                 </div>
                                 <div class="flex py-4 border-b-[1px] border-black">
-                                    <label for="cars" class="text-sm w-1/2">Provinsi</label>
+                                    <label for="cars" class="text-sm w-1/2">Kota/Kabupaten</label>
                                     <select id="cars" class="w-full " name="kode_kota">
                                         <?php $provinsi = $database->getReference('Kota')->getValue();
                                         foreach ($provinsi as $key => $row) {
