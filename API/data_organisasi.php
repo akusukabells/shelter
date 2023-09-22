@@ -48,3 +48,31 @@ if (isset($_POST['edit'])) {
     header("location: ../edit/data_organisasi.php");
 }
 
+if (isset($_POST['submit_edit'])) {
+    $kode_organisasi = $_SESSION['edit'];
+    $nama_organisasi = $_POST['nama_organisasi'];
+    $kode_kota = $_POST['kode_kota'];
+    $kategori_organisasi = $_POST['kategori_organisasi'];
+    $induk_organisasi = $_POST['induk_organisasi'];
+
+    $postData = [
+        'kode_organisasi' => $kode_organisasi,
+        'nama_organisasi' => $nama_organisasi,
+        'kode_kota' => $kode_kota,
+        'kategori_organisasi' => $kategori_organisasi,
+        'induk_organisasi' => $induk_organisasi,
+        'status' => "1"
+    ];
+
+
+    $postRef_result = $database->getReference("Data_Organisasi/" . $kode_organisasi)->set($postData);
+    if ($postRef_result) {
+        $_SESSION['status'] = "Successfully Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/data_organisasi.php");
+    } else {
+        $_SESSION['status'] = "Failed Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/data_organisasi.php");
+    }
+}

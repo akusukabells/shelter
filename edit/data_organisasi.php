@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kategori Organisasi - Dashboard</title>
+    <title>Data Organisasi - Dashboard</title>
 
     <!-- NEED -->
     <link rel="icon" href="../assets/icon/logo.png" type="image/x-icon">
@@ -75,7 +75,7 @@
                         <div class="flex w-full">
                             <div class="flex justify-between w-full">
                                 <div class="flex my-auto">
-                                    <h1 class=" text-xl font-bold">Edit <span class="text-end text-sm font-semibold">/ Kategori Organisasi</span> </h1>
+                                    <h1 class=" text-xl font-bold">Edit <span class="text-end text-sm font-semibold">/ Data Organisasi</span> </h1>
                                 </div>
                             </div>
                         </div>
@@ -84,19 +84,67 @@
                     <!-- Main Dashboard Tengah -->
                     <div class="lg:mx-52 md:mx-24 mx-4 mb-4  overflow-auto h-full text-sm">
                         <div class="">
-                            <form action="../API/kategori_organisasi.php" method="post">
+                            <form action="../API/data_organisasi.php" method="post">
                                 <?php
                                 $id = $_SESSION['edit'];
-                                $getData = $database->getReference('Kategori_Organisasi/' . $id)->getValue();
+                                $getData = $database->getReference('Data_Organisasi/' . $id)->getValue();
                                 ?>
                                 <!-- Text -->
                                 <div class="flex py-4 border-b-[1px] border-black">
-                                    <label class="text-sm w-1/2">Kode Kateogri</label>
+                                    <label class="text-sm w-1/2">Kode Organisasi</label>
                                     <input class="outline-none text-sm text-black w-full" value="<?php echo $getData['kode_organisasi']; ?>" type="text" name="kode_provinsi" placeholder="Kode Organisasi" disabled>
                                 </div>
                                 <div class="flex py-4 border-b-[1px] border-black">
-                                    <label class="text-sm w-1/2">Nama Kategori</label>
-                                    <input class="outline-none text-sm text-black w-full" value="<?php echo $getData['nama_organisasi']; ?>" type="text" name="nama_organisasi" placeholder="Nama Kategori">
+                                    <label class="text-sm w-1/2">Nama Organisasi</label>
+                                    <input class="outline-none text-sm text-black w-full" value="<?php echo $getData['nama_organisasi']; ?>" type="text" name="nama_organisasi" placeholder="Nama Organisasi">
+                                </div>
+                                <div class="flex py-4 border-b-[1px] border-black">
+                                    <label for="cars" class="text-sm w-1/2">Provinsi</label>
+                                    <select id="cars" class="w-full " name="kategori_organisasi">
+                                        <?php $kategori = $database->getReference('Kategori_Organisasi')->getValue();
+                                        foreach ($kategori as $key => $row) {
+                                            if ($row['kode_organisasi'] == $getData['kategori_organisasi']) {
+                                                echo "<option value=" . $row['kode_organisasi'] . " selected>" . $row['nama_organisasi'] . "</option>";
+                                            } else {
+                                                echo "<option value=" . $row['kode_organisasi'] . ">" . $row['nama_organisasi'] . "</option>";
+                                            }
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="flex py-4 border-b-[1px] border-black">
+                                    <label for="cars" class="text-sm w-1/2">Provinsi</label>
+                                    <select id="cars" class="w-full " name="induk_organisasi">
+                                        <?php $data_organisasi = $database->getReference('Data_Organisasi')->getValue();
+                                        echo "<option value=''>-</option>";
+                                        foreach ($data_organisasi as $key => $row) {
+
+                                            if (empty($getData['induk_organisasi'])) {
+                                                echo "<option value=" . $row['kode_organisasi'] . ">" . $row['nama_organisasi'] . "</option>";
+                                            } else {
+                                                if ($row['kode_organisasi'] == $getData['induk_organisasi']) {
+                                                    echo "<option value=" . $row['kode_organisasi'] . " selected>" . $row['nama_organisasi'] . "</option>";
+                                                } else {
+                                                    echo "<option value=" . $row['kode_organisasi'] . ">" . $row['nama_organisasi'] . "</option>";
+                                                }
+                                            }
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="flex py-4 border-b-[1px] border-black">
+                                    <label for="cars" class="text-sm w-1/2">Provinsi</label>
+                                    <select id="cars" class="w-full " name="kode_kota">
+                                        <?php $provinsi = $database->getReference('Kota')->getValue();
+                                        foreach ($provinsi as $key => $row) {
+                                            if ($row['kode_kota'] == $getData['kode_kota']) {
+                                                echo "<option value=" . $row['kode_kota'] . " selected>" . $row['nama_kota'] . "</option>";
+                                            } else {
+                                                echo "<option value=" . $row['kode_kota'] . ">" . $row['nama_kota'] . "</option>";
+                                            }
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                                 <!-- Submit -->
                                 <div class="flex justify-end">
