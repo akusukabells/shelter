@@ -54,7 +54,9 @@
                         <div class="flex w-full">
                             <div class="flex justify-between w-full">
                                 <div>
-                                    <h1 class="text-xl font-bold">Hak Akses Menu</h1>
+                                    <h1 class=" text-xl font-bold">Hak Akses Menu /<span class="text-end text-sm font-semibold"><?php $getNameRole = $database->getReference('Roles/' . $_SESSION['hakaksesmenu'])->getValue();
+                                                                                                                                echo $getNameRole['nama_role']; ?></span> </h1>
+
                                 </div>
                             </div>
                         </div>
@@ -66,15 +68,16 @@
                             <form action="../API/hakaksesmenu.php" method="post">
 
 
-                                <!-- Konten Checkbox -->
-                                <div class="py-2 border-b-[1px] border-black">
 
-                                    <?php
-                                    $getMenu = $database->getReference('Menu')->getValue();
 
-                                    foreach ($getMenu as $key => $rowmenu) {
-                                        if ($rowmenu['parent_menu'] == "root") {
-                                    ?>
+                                <?php
+                                $getMenu = $database->getReference('Menu')->getValue();
+
+                                foreach ($getMenu as $key => $rowmenu) {
+                                    if ($rowmenu['parent_menu'] == "root") {
+                                ?>
+                                        <!-- Konten Checkbox -->
+                                        <div class="py-2 border-b-[1px] border-black">
                                             <div id="openKontenCheckbox" class="py-2 flex justify-between">
                                                 <div><?php echo $rowmenu['nama_menu']; ?></div>
                                                 <div id="symbolKontentCheckbox" class="fa fa-plus"></div>
@@ -119,15 +122,16 @@
                                                 }
                                                 ?>
                                             </div>
-                                    <?php
-                                        }
+                                        </div>
+                                <?php
                                     }
+                                }
 
-                                    ?>
+                                ?>
 
 
 
-                                </div>
+
 
                                 <!-- Submit -->
                                 <div class="flex justify-end">

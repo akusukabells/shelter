@@ -74,14 +74,14 @@
                                     <input class="outline-none text-sm text-black w-full" type="text" name="nip" id="NIP" placeholder="Masukan NIP">
                                 </div>
 
-                                <!-- Konten Checkbox -->
+                                <!-- Konten Checkbox
                                 <div class="py-2 border-b-[1px] border-black">
                                     <div id="openKontenCheckbox" class="py-2 flex justify-between">
                                         <div>Dashboard</div>
                                         <div id="symbolKontentCheckbox" class="fa fa-plus"></div>
                                     </div>
 
-                                    <!-- Open Konten Checkbox -->
+                                    
                                     <div id="kontentCheckbox" class="h-0 transform overflow-hidden transition-[height] duration-1000 ease-in-out text-xs">
                                         <div class="py-3 flex flex-col">
                                             <div class="flex">
@@ -121,6 +121,7 @@
                                         </div>
                                     </div>
                                 </div>
+        -->
 
                                 <!-- Submit -->
                                 <div class="flex justify-end">
