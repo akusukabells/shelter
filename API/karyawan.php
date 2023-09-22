@@ -51,3 +51,43 @@ if (isset($_POST['delete'])) {
         header("location: ../public/karyawan.php");
     }
 }
+
+if (isset($_POST['edit'])) {
+    $_SESSION['edit'] = $_POST['edit'];
+    header("location: ../edit/karyawan.php");
+}
+
+if (isset($_POST['submit_edit'])) {
+    $nip = $_SESSION['edit'];
+    $nik = $_POST['nik'];
+    $nohp = $_POST['nohp'];
+    $nama = $_POST['nama'];
+    $role = $_POST['role'];
+
+    $getDataBefore = $database->getReference('Users/' . $nip)->getValue();
+    $getCabang = $database->getReference('Roles/' . $role)->getValue();
+
+    $postData = [
+        'nip' => $nip,
+        'password' => $getDataBefore['password'],
+        'nik' => $nik,
+        'nohp' => $nohp,
+        'nama' => $nama,
+        'role' => $role,
+        'handover' => $getDataBefore['handover'],
+        'cuti' => $getDataBefore['cuti'],
+        'cabang' => $getCabang['organisasi']
+    ];
+
+
+    $postRef_result = $database->getReference("Users/" . $nip)->set($postData);
+    if ($postRef_result) {
+        $_SESSION['status'] = "Successfully Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/karyawan.php");
+    } else {
+        $_SESSION['status'] = "Failed Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/karyawan.php");
+    }
+}

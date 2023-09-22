@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
             }
         } else {
             $temp = explode(".", $_FILES['fileToUpload']["name"]);
-            $newfilename = $kode_program . '.' . end($temp);
+            $newfilename = $kode_program . '.png';
             $success = $bucket->upload(
                 fopen($_FILES['fileToUpload']['tmp_name'], 'r'),
                 [
@@ -62,6 +62,7 @@ if (isset($_POST['submit'])) {
 if (isset($_POST['delete'])) {
     $del_id = $_POST['delete'];
     $del_ref = $database->getReference('Menu/' . $del_id)->remove();
+    $object = $bucket->object('Icon/' . $del_id . '.png')->delete();
     if ($del_ref) {
         $_SESSION['status'] = "Successfully Deleting Data";
         header("location: ../public/menu.php");
