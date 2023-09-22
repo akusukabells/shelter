@@ -27,7 +27,11 @@ $date = $tanggal['day'] . "-" . $tanggal['month'] . "-" . $tanggal['year'];
             <div id="shortDashboard" class="flex text-xs py-4 flex-col gap-4">
 
                 <div class="mx-4 mb-4 text-center whitespace-nowrap text-xs overflow-hidden text-white">
-                    <p class="font-semibold">Senin</p>
+                    <p class="font-semibold"><?php
+                                                $date2 = $tanggal['year'] . "-" . $tanggal['month'] . "-" . $tanggal['day'];
+                                                echo convertDate(date('D', strtotime($date2)));
+
+                                                ?></p>
                 </div>
 
                 <!-- Menu Home -->
@@ -285,7 +289,34 @@ $date = $tanggal['day'] . "-" . $tanggal['month'] . "-" . $tanggal['year'];
             </div>
 
         </div>
-
+        <?php
+        function convertDate($hari)
+        {
+            switch ($hari) {
+                case "Sun":
+                    return "Minggu";
+                    break;
+                case "Mon":
+                    return "Senin";
+                    break;
+                case "Tue":
+                    return "Selasa";
+                    break;
+                case "Wed":
+                    return "Rabu";
+                    break;
+                case "Thu":
+                    return "Kamis";
+                    break;
+                case "Fri":
+                    return "Jumat";
+                    break;
+                case "Sat":
+                    return "Sabtu";
+                    break;
+            }
+        }
+        ?>
         <!-- Dashboard Navbar Left Bottom -->
         <div class="bg-black p-4 py-7">
             <div class="flex justify-center text-white text-xs">

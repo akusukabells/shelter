@@ -63,6 +63,19 @@
 
         <!-- Main Dashboard -->
         <section class="w-full h-screen flex justify-center">
+            <?php
+            if (isset($_SESSION['status'])) {
+            ?>
+                <div class="top-4 right-4 absolute bg-red-600 ">
+                    <div class="px-6 py-4 flex text-white">
+                        <div class="my-auto mr-4 text-sm"><i class="fa fa-warning"></i></div>
+                        <h1 class="my-auto text-sm"><?php echo $_SESSION['status']; ?></h1>
+                    </div>
+                </div>
+            <?php
+                unset($_SESSION['status']);
+            }
+            ?>
             <div class="relative w-full">
 
                 <!-- Form Popup -->

@@ -26,10 +26,10 @@ if (isset($_POST['submit'])) {
     } else {
         $postRef_result = $database->getReference("Holidays/" . $test)->set($postData);
         if ($postRef_result) {
-            $_SESSION['status'] = "Successfully";
+            $_SESSION['status'] = "Successfully Adding Data";
             header("location: ../public/holidays.php");
         } else {
-            $_SESSION['status'] = "Failed";
+            $_SESSION['status'] = "Failed Adding Data";
             header("location:../public/holidays.php");
         }
     }
@@ -39,10 +39,10 @@ if (isset($_POST['delete'])) {
     $del_id = $_POST['delete'];
     $del_ref = $database->getReference('Holidays/' . $del_id)->remove();
     if ($del_ref) {
-        $_SESSION['status'] = $test;
+        $_SESSION['status'] = "Successfully Deteling Data";
         header("location: ../public/holidays.php");
     } else {
-        $_SESSION['status'] = "Failed";
+        $_SESSION['status'] = "Failed Deteling Data";
         header("location: ../public/holidays.php");
     }
 }

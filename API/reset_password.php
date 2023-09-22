@@ -7,14 +7,14 @@ if (isset($_POST['submit'])) {
     if ($reference > 0) {
         $postRef_result = $database->getReference("Users/" . $nip . "/password")->set($nip);
         if ($postRef_result) {
-            $_SESSION['status'] = "Successfully";
+            $_SESSION['status'] = "Successfully Reset Password";
             header("location: ../public/resetpassword.php");
         } else {
-            $_SESSION['status'] = "Failed";
+            $_SESSION['status'] = "Failed Reset Password";
             header("location:../public/resetpassword.php");
         }
     } else {
-        $_SESSION['status'] = "Data Tidak ada";
+        $_SESSION['status'] = "NIP Tidak Ditemukan";
         header("location:../public/resetpassword.php");
     }
 }

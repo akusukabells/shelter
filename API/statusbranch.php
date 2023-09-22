@@ -15,10 +15,10 @@ if (isset($_POST['close_branch'])) {
         ];
         $close = $database->getReference("Data_Organisasi/" . $id)->set($postData);
         if ($close) {
-            $_SESSION['status'] = "Successfully";
+            $_SESSION['status'] = "Successfully Close Branch";
             header("location: ../public/statusbranch.php");
         } else {
-            $_SESSION['status'] = "Failed";
+            $_SESSION['status'] = "Failed Close Branch";
             header("location: ../public/statusbranch.php");
         }
     }
@@ -37,10 +37,10 @@ if (isset($_POST['open_branch'])) {
         ];
         $close = $database->getReference("Data_Organisasi/" . $id)->set($postData);
         if ($close) {
-            $_SESSION['status'] = "Successfully";
+            $_SESSION['status'] = "Successfully Open Branch";
             header("location: ../public/statusbranch.php");
         } else {
-            $_SESSION['status'] = "Failed";
+            $_SESSION['status'] = "Failed Open Branch";
             header("location: ../public/statusbranch.php");
         }
     }
@@ -60,10 +60,10 @@ if (isset($_POST['open_all'])) {
         $database->getReference("Data_Organisasi/" . $row['kode_organisasi'])->set($postData);
     }
     if ($ref) {
-        $_SESSION['status'] = "Successfully";
+        $_SESSION['status'] = "Successfully Open All Branch";
         header("location: ../public/statusbranch.php");
     } else {
-        $_SESSION['status'] = "Failed";
+        $_SESSION['status'] = "Failed Open All Branch";
         header("location: ../public/statusbranch.php");
     }
 }
@@ -82,10 +82,10 @@ if (isset($_POST['close_all'])) {
         $database->getReference("Data_Organisasi/" . $row['kode_organisasi'])->set($postData);
     }
     if ($ref) {
-        $_SESSION['status'] = "Successfully";
+        $_SESSION['status'] = "Successfully Close All Branch";
         header("location: ../public/statusbranch.php");
     } else {
-        $_SESSION['status'] = "Failed";
+        $_SESSION['status'] = "Failed Close All Branch";
         header("location: ../public/statusbranch.php");
     }
 }

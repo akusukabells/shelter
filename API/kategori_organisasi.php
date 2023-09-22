@@ -17,10 +17,10 @@ if (isset($_POST['submit'])) {
     } else {
         $postRef_result = $database->getReference("Kategori_Organisasi/" . $kode_organisasi)->set($postData);
         if ($postRef_result) {
-            $_SESSION['status'] = "Successfully";
+            $_SESSION['status'] = "Successfully Adding Data";
             header("location: ../public/kategori_organisasi.php");
         } else {
-            $_SESSION['status'] = "Failed";
+            $_SESSION['status'] = "Failed Adding Data";
             header("location: ../public/kategori_organisasi.php");
         }
     }
@@ -30,10 +30,10 @@ if (isset($_POST['delete'])) {
     $del_id = $_POST['delete'];
     $del_ref = $database->getReference('Kategori_Organisasi/' . $del_id)->remove();
     if ($del_ref) {
-        $_SESSION['status'] = "Successfully";
+        $_SESSION['status'] = "Successfully Deleting Data";
         header("location: ../public/kategori_organisasi.php");
     } else {
-        $_SESSION['status'] = "Failed";
+        $_SESSION['status'] = "Failed Deleting Data";
         header("location: ../public/kategori_organisasi.php");
     }
 }

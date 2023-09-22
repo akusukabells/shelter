@@ -23,10 +23,10 @@ if (isset($_POST['submit'])) {
     } else {
         $postRef_result = $database->getReference("Roles/" . $kode_role)->set($postData);
         if ($postRef_result) {
-            $_SESSION['status'] = "Successfully";
+            $_SESSION['status'] = "Successfully Adding Data";
             header("location:../public/roles.php");
         } else {
-            $_SESSION['status'] = "Failed";
+            $_SESSION['status'] = "Failed Adding Data";
             header("location:../public/roles.php");
         }
     }
@@ -35,10 +35,10 @@ if (isset($_POST['delete'])) {
     $del_id = $_POST['delete'];
     $del_ref = $database->getReference('Roles/' . $del_id)->remove();
     if ($del_ref) {
-        $_SESSION['status'] = "Successfully";
+        $_SESSION['status'] = "Successfully Deleting Data";
         header("location: ../public/roles.php");
     } else {
-        $_SESSION['status'] = "Failed";
+        $_SESSION['status'] = "Failed Deleting Data";
         header("location: ../public/roles.php");
     }
 }
