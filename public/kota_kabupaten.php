@@ -58,10 +58,17 @@
 
         <!-- Navbar Left Dashboard -->
         <section id="navbarLeftDashboard" class="border-r-2 border-white h-screen flex justify-center w-20 transform transition-[width] duration-1000 ease-in-out">
+            <?php include("navbar.php");
+            $reference = $database->getReference('Kota')->getValue();
+            ?>
+        </section>
+
+        <!-- Main Dashboard -->
+        <section class="w-full h-screen flex justify-center">
             <?php
             if (isset($_SESSION['status'])) {
             ?>
-                <div class="top-4 right-4 absolute bg-red-600 ">
+                <div class="z-50 top-4 right-4 absolute bg-red-600 ">
                     <div class="px-6 py-4 flex text-white">
                         <div class="my-auto mr-4 text-sm"><i class="fa fa-warning"></i></div>
                         <h1 class="my-auto text-sm"><?php echo $_SESSION['status']; ?></h1>
@@ -71,13 +78,6 @@
                 unset($_SESSION['status']);
             }
             ?>
-            <?php include("navbar.php");
-            $reference = $database->getReference('Kota')->getValue();
-            ?>
-        </section>
-
-        <!-- Main Dashboard -->
-        <section class="w-full h-screen flex justify-center">
             <div class="relative w-full">
 
                 <!-- Form Popup -->

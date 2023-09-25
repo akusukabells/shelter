@@ -66,7 +66,7 @@
             <?php
             if (isset($_SESSION['status'])) {
             ?>
-                <div class="top-4 right-4 absolute bg-red-600 ">
+                <div class="z-50 top-4 right-4 absolute bg-red-600 ">
                     <div class="px-6 py-4 flex text-white">
                         <div class="my-auto mr-4 text-sm"><i class="fa fa-warning"></i></div>
                         <h1 class="my-auto text-sm"><?php echo $_SESSION['status']; ?></h1>

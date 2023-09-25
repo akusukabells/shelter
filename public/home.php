@@ -37,7 +37,7 @@
         <section class="relative w-full h-screen flex justify-center">
 
             <!--  -->
-            <div class="top-4 right-4 absolute bg-red-600 ">
+            <div class="z-50 top-4 right-4 absolute bg-red-600 ">
                 <div class="px-6 py-4 flex text-white">
                     <div class="my-auto mr-4 text-sm"><i class="fa fa-warning"></i></div>
                     <h1 class="my-auto text-sm">Ini Notif apa aja</h1>
