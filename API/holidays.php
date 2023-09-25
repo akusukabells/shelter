@@ -47,6 +47,54 @@ if (isset($_POST['delete'])) {
     }
 }
 if (isset($_POST['edit'])) {
-    $edit_id = $_POST['edit'];
-    echo $edit_id;
+    $_SESSION['edit'] = $_POST['edit'];
+    header("location: ../edit/holidays.php");
+}
+
+if (isset($_POST['delete'])) {
+    $del_id = $_POST['delete'];
+    $del_ref = $database->getReference('Provinsi/' . $del_id)->remove();
+    if ($del_ref) {
+        $_SESSION['status'] = "Successfully Deleting Data";
+        header("location: ../public/provinsi.php");
+    } else {
+        $_SESSION['status'] = "Failed Deleting Data";
+        header("location: ../public/provinsi.php");
+    }
+}
+if (isset($_POST['edit'])) {
+    $_SESSION['edit'] = $_POST['edit'];
+    header("location: ../edit/holidays.php");
+}
+
+
+if (isset($_POST['submit_edit'])) {
+
+    $kode_holidays = $_SESSION['edit'];
+    $keterangan = $_POST['keterangan'];
+    $day = substr($kode_holidays, 6);
+    $month = substr($kode_holidays, 4, 2);
+    $year = substr($kode_holidays, 0, 4);
+    $tanggal = $day . "-" . $month . "-" . $year;
+    $postData = [
+        'kode_holidays' => $kode_holidays,
+        'tanggal' => $tanggal,
+        'keterangan' => $keterangan,
+        'day' => $day,
+        'month' => $month,
+        'year' => $year,
+        'status' => "true"
+    ];
+
+
+    $postRef_result = $database->getReference("Holidays/" . $kode_holidays)->set($postData);
+    if ($postRef_result) {
+        $_SESSION['status'] = "Successfully Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/holidays.php");
+    } else {
+        $_SESSION['status'] = "Failed Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/holidays.php");
+    }
 }

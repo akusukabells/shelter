@@ -71,7 +71,8 @@ if (isset($_POST['delete'])) {
         header("location: ../public/menu.php");
     }
 }
+
 if (isset($_POST['edit'])) {
-    $edit_id = $_POST['edit'];
-    echo $edit_id;
+    $_SESSION['status'] = "Coming Soon";
+    header("location: ../public/menu.php");
 }

@@ -43,6 +43,35 @@ if (isset($_POST['delete'])) {
     }
 }
 if (isset($_POST['edit'])) {
-    $edit_id = $_POST['edit'];
-    echo $edit_id;
+    $_SESSION['edit'] = $_POST['edit'];
+    header("location: ../edit/roles.php");
+}
+
+
+if (isset($_POST['submit_edit'])) {
+    $kode_role = $_SESSION['edit'];
+    $nama_role = $_POST['nama_role'];
+    $organisasi = $_POST['organisasi'];
+    $flag = $_POST['flag'];
+    $gaji = $_POST['gaji'];
+
+    $postData = [
+        'kode_role' => $kode_role,
+        'nama_role' => $nama_role,
+        'organisasi' => $organisasi,
+        'flag' => $flag,
+        'gaji' => $gaji
+    ];
+
+
+    $postRef_result = $database->getReference("Roles/" . $kode_role)->set($postData);
+    if ($postRef_result) {
+        $_SESSION['status'] = "Successfully Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/roles.php");
+    } else {
+        $_SESSION['status'] = "Failed Editing Data";
+        unset($_SESSION['edit']);
+        header("location: ../public/roles.php");
+    }
 }
