@@ -26,6 +26,8 @@
 
 <body class="font-montserrat overflow-hidden">
 
+    <div class="w-96"></div>
+
     <section class="flex">
 
         <!-- Navbar Left Dashboard -->

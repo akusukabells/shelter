@@ -699,6 +699,10 @@ video {
   width: max-content;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
 .table-fixed {
   table-layout: fixed;
 }
