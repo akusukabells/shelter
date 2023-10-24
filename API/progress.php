@@ -72,11 +72,10 @@
                     $eoy = checkeoy();
                     break;
                 case 88:
-
+                    WriteIzinSkrng();
                     break;
                 case 89:
                     WriteCutiSkrng();
-
                     break;
                 case 90:
                     CHECKABSENSI();
@@ -124,6 +123,37 @@
         echo '<script language="javascript">window.location.replace("../public/endofdays.php")</script>';
     }
 
+    function WriteIzinSkrng()
+    {
+        include('../connector/dbcon.php');
+        $reference = $database->getReference('Users')->getValue();
+
+
+        $tanggal = $database->getReference('SystemDate')->getValue();
+        $date = $tanggal['year'] . $tanggal['month'] . $tanggal['day'];
+        foreach ($reference as $key => $row) {
+            $Izin = $database->getReference("Izin/" . $row['nip'])->getValue();
+            if ($Izin > 0) {
+                foreach ($Izin as $key => $cutiday) {
+                    if (intval($cutiday['fromtgl']) <= intval($date) && intval($cutiday['totgl']) >= intval($date)) {
+                        $postData = [
+                            'date' => strval($date),
+                            'day' => strval($tanggal['day']),
+                            'key' => strval($date),
+                            'month' => strval($tanggal['month']),
+                            'nip' => strval($row['nip']),
+                            'status' => 'Izin',
+                            'waktukeluar' => "-",
+                            'waktumasuk' => '-',
+                            'year' => strval($tanggal['year'])
+                        ];
+                        $result = $database->getReference('ABSENSI/' . $row['nip'] . "/" . $date)->set($postData);
+                        
+                    }
+                }
+            }
+        }
+    }
     function WriteCutiSkrng()
     {
         include('../connector/dbcon.php');
@@ -285,6 +315,7 @@
     }
     function checkHandOver($nextDay)
     {
+        //nanti disini yang di rombak
         include('../connector/dbcon.php');
         $getSystemDate = $database->getReference('SystemDate')->getValue();
         $tanggal = $getSystemDate['year'] . $getSystemDate['month'] . $getSystemDate['day'];
@@ -295,18 +326,18 @@
         if ($handover) {
 
             foreach ($handover as $key => $row) {
-                if ($row['to'] == $tanggal || $row['to'] <= $nextDay) {
-                    $datauser = $database->getReference('Users/' . $row['nip'])->getValue();
+                if (intval($row['totanggal']) <= intval($tanggal) || intval($row['totanggal']) < intval($nextDay)) {
+                    $datauser = $database->getReference('Users/' . $row['tonip'])->getValue();
                     $postData = [
                         'handover' => 'false',
-                        'nama' => $row['nama'],
-                        'nik' => $row['nik'],
-                        'nip' => $row['nip'],
-                        'nohp' => $row['nohp'],
-                        'password' => $row['password'],
-                        'role' => $row['role'],
-                        'cuti' => $row['cuti'],
-                        'cabang' => $getCabang['organisasi']
+                        'nama' => $datauser['nama'],
+                        'nik' => $datauser['nik'],
+                        'nip' => $datauser['nip'],
+                        'nohp' => $datauser['nohp'],
+                        'password' => $datauser['password'],
+                        'role' => $datauser['role'],
+                        'cuti' => $datauser['cuti'],
+                        'cabang' => $datauser['cabang']
                     ];
                     $postRef_result = $database->getReference("Users/" . $datauser['nip'])->set($postData);
                     if ($postRef_result) {
@@ -402,7 +433,7 @@
                             $totalabsen++;
                         } else if ($row1['status'] == "CUTI") {
                             $totalcuti++;
-                        } else if ($row1['status'] == "Sakit") {
+                        } else if ($row1['status'] == "Izin") {
                             $totalsakit++;
                         }
                     }

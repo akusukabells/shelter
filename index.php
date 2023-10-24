@@ -35,6 +35,7 @@ if (!empty($_SESSION['nip'])) {
     <section class="flex">
 
         <section class="w-full h-screen flex justify-center">
+
             <div class="relative bg-black w-full">
                 <div class="h-screen flex flex-col">
 
@@ -51,6 +52,20 @@ if (!empty($_SESSION['nip'])) {
                                             <input class="placeholder:text-white mt-4 placeholder:border-white text-xs w-80 outline-none bg-black border-[1px] text-white rounded-sm px-4 py-3" type="text" name="nip" placeholder="NIP" required>
                                             <input class="placeholder:text-white mt-4 text-xs w-80 outline-none bg-black border-[1px] text-white rounded-sm px-4 py-3" type="password" name="password" placeholder="Password" required>
                                         </div>
+                                        <?php
+                                        if (isset($_SESSION['status'])) {
+                                        ?>
+                                            <div class="top-4 right-4 absolute bg-red-600 ">
+                                                <div class="px-6 py-4 flex text-white">
+                                                    <div class="my-auto mr-4 text-sm"><i class="fa fa-warning"></i></div>
+                                                    <h1 class="my-auto text-sm"><?php echo $_SESSION['status']; ?></h1>
+                                                </div>
+                                            </div>
+                                        <?php
+                                            unset($_SESSION['status']);
+                                        }
+                                        ?>  
+                                        <br>
                                         <button class="mt-4 cursor-pointer bg-cyan text-white text-xs rounded-sm py-3 font-semibold w-80" type="submit">LOGIN</button>
                                     </form>
 

@@ -14,11 +14,14 @@ if ($reference > 0) {
 
             header("location: ../public/home.php");
         } else {
-            header("location:../index.php?pesan=bukanadmin");
+            $_SESSION['status'] = "Anda Bukan Admin";
+            header("location:../index.php");
         }
     } else {
-        header("location:../index.php?pesan=gagal");
+        $_SESSION['status'] = "NIP atau Password Tidak Valid";
+        header("location:../index.php");
     }
 } else {
-    header("location:../index.php?pesan=gagal");
+    $_SESSION['status'] = "NIP atau Password Tidak Valid";
+    header("location:../index.php");
 }
